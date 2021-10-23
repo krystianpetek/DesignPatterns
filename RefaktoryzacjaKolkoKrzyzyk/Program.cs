@@ -22,8 +22,8 @@ namespace RefaktoryzacjaKolkoKrzyzyk
             get { return isX; }
             set { isX = value; }
         }
-        static int wymiarTablicy = 3;
-        public char[,] box = new char[wymiarTablicy, wymiarTablicy];
+        private static int wymiarTablicy = 3;
+        private char[,] box = new char[wymiarTablicy, wymiarTablicy];
         public void WriteBoard()
         {
             for (int i = 0; i < wymiarTablicy; i++)
@@ -49,74 +49,77 @@ namespace RefaktoryzacjaKolkoKrzyzyk
 
         public void CheckWin()
         {
-
+            int licznik;
             for (int liniaX = 0; liniaX < wymiarTablicy; liniaX++)
             {
-                int licznik = 0;
+                licznik = 0;
                 for (int liniaY = 0; liniaY < wymiarTablicy; liniaY++)
                 {
                     if (box[liniaX, liniaY] == 'X')
                         licznik++;
-                    else if(box[liniaX, liniaY] == 'Y')
-                    {
+                    else if (box[liniaX, liniaY] == 'Y')
                         licznik--;
-                    }
                 }
-
-                if (licznik > wymiarTablicy-1 || licznik < -1*(wymiarTablicy-1))
-                {
-                    isWin = true;
-                    if(licznik > 0)
-                        winPerson = 'X';
-                    else
-                        winPerson = 'Y';
-                    break;
-                }
+                WIN(licznik);
             }
 
             for (int liniaY = 0; liniaY < wymiarTablicy; liniaY++)
             {
-                int licznik = 0;
+                licznik = 0;
                 for (int liniaX = 0; liniaX < wymiarTablicy; liniaX++)
                 {
                     if (box[liniaX, liniaY] == 'X')
                         licznik++;
                     else if (box[liniaX, liniaY] == 'Y')
-                    {
                         licznik--;
+                }
+                WIN(licznik);
+            }
+
+            licznik = 0;
+            for (int liniaX = 0; liniaX < wymiarTablicy; liniaX++)
+            {
+                for (int liniaY = 0; liniaY < wymiarTablicy; liniaY++)
+                {
+                    if (liniaX == liniaY)
+                    {
+                        if (box[liniaX, liniaY] == 'X')
+                            licznik++;
+                        else if (box[liniaX, liniaY] == 'Y')
+                            licznik--;
                     }
                 }
-
-                if (licznik > wymiarTablicy - 1 || licznik < -1 * (wymiarTablicy - 1))
-                {
-                    isWin = true;
-                    if (licznik > 0)
-                        winPerson = 'X';
-                    else
-                        winPerson = 'Y';
-                    break;
-                }
+                WIN(licznik);
             }
             
-            
+            licznik = 0;
+            for (int liniaX = 0; liniaX < wymiarTablicy; liniaX++)
+            {
+                for (int liniaY = 0; liniaY < wymiarTablicy; liniaY++)
+                {
+                    if (liniaX + liniaY == wymiarTablicy-1)
+                    {
+                        if (box[liniaX, liniaY] == 'X')
+                            licznik++;
+                        else if (box[liniaX, liniaY] == 'Y')
+                            licznik--;
+                    }
+                }
+                WIN(licznik);                
+            }
         }
 
-        public void NotVacantError()
+        private char WIN(int licznik)
         {
-            _error = true;
-            Console.WriteLine();
-            Console.WriteLine("Error: box not vacant!");
-            Console.WriteLine("Press any key to try again..");
-            Console.ReadKey();
-            return;
-        }
-
-        public void DisplayLoss()
-        {
-            Console.WriteLine();
-            Console.WriteLine("No one won.");
-            Console.ReadKey();
-            Environment.Exit(1);
+            if (licznik > wymiarTablicy - 1 || licznik < -1 * (wymiarTablicy - 1))
+            {
+                isWin = true;
+                if (licznik > 0)
+                    winPerson = 'X';
+                else
+                    winPerson = 'Y';
+            }
+            return winPerson;
         }
 
         private bool hasError;
@@ -142,142 +145,47 @@ namespace RefaktoryzacjaKolkoKrzyzyk
                 }
             }
             prog.isY = true;
-            Console.WriteLine(" -- Tic Tac Toe -- ");
-            Console.Clear();
             while (!prog.isWin)
             {
                 if (moveCount == wymiarTablicy * wymiarTablicy)
                 {
-                    prog.DisplayLoss();
+                    Console.WriteLine("\nNo one won.");
+                    Console.ReadKey();
+                    Environment.Exit(1);
                 }
                 if ((prog.isY) == true) // if is X
-                {
                     askMove = 'X';
+                else
+                    askMove = 'Y';
+
+                Console.Clear();
+                prog.WriteBoard();
+                Console.WriteLine($"\nWhat box do you want to place {askMove} in? (1-{wymiarTablicy * wymiarTablicy})");
+                Console.Write("> ");
+                selTemp = int.Parse(Console.ReadLine());
+                if (selTemp > 0 && selTemp < (wymiarTablicy * wymiarTablicy) + 1)
+                {
+                    int Xowa = (selTemp - 1) / wymiarTablicy;
+                    int Yowa = (selTemp - 1) % wymiarTablicy;
+                    if (prog.box[Xowa, Yowa] == ' ')
+                    {
+                        prog.box[Xowa, Yowa] = askMove;
+                        moveCount++;
+                    }
+                    else
+                    {
+                        prog._error = true;
+                        Console.WriteLine("\nError: box not vacant!\nPress any key to try again..");
+                        Console.ReadKey();
+                    }
                 }
                 else
                 {
-                    askMove = 'Y';
-                }
-                Console.Clear();
-                prog.WriteBoard();
-                Console.WriteLine();
-                Console.WriteLine("What box do you want to place {0} in? (1-9)", askMove);
-                Console.Write("> ");
-                selTemp = int.Parse(Console.ReadLine());
-                
-                for(int iteracja = 0;iteracja < prog.box.Length;iteracja++)
-                {
-
+                    Console.WriteLine("Wrong selection entered!\nPress any key to try again..");
+                    Console.ReadKey();
+                    prog._error = true;
                 }
 
-                switch (selTemp)
-                {
-                    case 1:
-                        if (prog.box[0, 0] == ' ')
-                        {
-                            prog.box[0, 0] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    case 2:
-                        if (prog.box[0, 1] == ' ')
-                        {
-                            prog.box[0, 1] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    case 3:
-                        if (prog.box[0, 2] == ' ')
-                        {
-                            prog.box[0, 2] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    case 4:
-                        if (prog.box[1, 0] == ' ')
-                        {
-                            prog.box[1, 0] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    case 5:
-                        if (prog.box[1, 1] == ' ')
-                        {
-                            prog.box[1, 1] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    case 6:
-                        if (prog.box[1, 2] == ' ')
-                        {
-                            prog.box[1, 2] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    case 7:
-                        if (prog.box[2, 0] == ' ')
-                        {
-                            prog.box[2, 0] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    case 8:
-                        if (prog.box[2, 1] == ' ')
-                        {
-                            prog.box[2, 1] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    case 9:
-                        if (prog.box[2, 2] == ' ')
-                        {
-                            prog.box[2, 2] = askMove;
-                            moveCount++;
-                        }
-                        else
-                        {
-                            prog.NotVacantError();
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("Wrong selection entered!");
-                        Console.WriteLine("Press any key to try again..");
-                        Console.ReadKey();
-                        prog._error = true;
-                        break;
-                }
                 if (prog._error)
                 {
                     prog.CheckWin(); // if error, just check win
@@ -291,8 +199,7 @@ namespace RefaktoryzacjaKolkoKrzyzyk
             }
             Console.Clear();
             prog.WriteBoard();
-            Console.WriteLine();
-            Console.WriteLine("The winner is {0}!", prog.winPerson);
+            Console.WriteLine("\nThe winner is {0}!", prog.winPerson);
             Console.ReadKey();
         }
     }
