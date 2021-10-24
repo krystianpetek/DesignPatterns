@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefaktoryzacjaKolkoKrzyzyk"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "budowniczy", "budowniczy\budowniczy.csproj", "{79D8637A-87DA-4E62-8669-EBF92552E009}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prototyp", "prototyp\prototyp.csproj", "{EE3BE047-E3A8-4045-A78F-95E81AF3D6BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{79D8637A-87DA-4E62-8669-EBF92552E009}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79D8637A-87DA-4E62-8669-EBF92552E009}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79D8637A-87DA-4E62-8669-EBF92552E009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE3BE047-E3A8-4045-A78F-95E81AF3D6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE3BE047-E3A8-4045-A78F-95E81AF3D6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE3BE047-E3A8-4045-A78F-95E81AF3D6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE3BE047-E3A8-4045-A78F-95E81AF3D6BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
