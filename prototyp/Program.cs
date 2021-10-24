@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace prototyp
 {
     public abstract class ProductPrototype
     {
-        private decimal price { get; }
+        public decimal Price;
 
         public ProductPrototype(decimal price)
         {
-            //
-            price = this.price;
+            Price = price;
         }
 
         public ProductPrototype Clone()
@@ -23,16 +23,13 @@ namespace prototyp
     {
         public Bread(decimal price) : base(price) { }
     }
-    //
     public class Butter : ProductPrototype
     {
         public Butter(decimal price) : base(price) { }
     }
 
-
     public class Supermarket
     {
-
         private Dictionary<string, ProductPrototype> _productList = new Dictionary<string, ProductPrototype>();
 
         public void AddProduct(string key, ProductPrototype productPrototype)
@@ -42,10 +39,8 @@ namespace prototyp
 
         public ProductPrototype GetClonedProduct(string key)
         {
-            //
-            return (ProductPrototype)this.MemberwiseClone();
+            return _productList[key].Clone();
         }
-
     }
 
 
@@ -53,14 +48,17 @@ namespace prototyp
     {
         public static void Main(string[] args)
         {
-            //
+            Console.OutputEncoding = Encoding.UTF8;
             Supermarket supermarket = new Supermarket();
+            supermarket.AddProduct("Bread", new Bread(9.50m));
             supermarket.AddProduct("Butter", new Butter(5.30m));
 
-            //...
+            ProductPrototype product = supermarket.GetClonedProduct("Bread");
+            Console.WriteLine(String.Format("Bread - {0:F2} zł > {1:F2} zł", product.Price, (product.Price - (product.Price*0.1m))));
             product = supermarket.GetClonedProduct("Bread");
-            Console.WriteLine(String.Format("Bread - {0} zł", product.Price));
-            //...
+            Console.WriteLine(String.Format("Bread - {0:F2} zł", product.Price));
+            product = supermarket.GetClonedProduct("Butter");
+            Console.WriteLine(String.Format("Butter - {0:F2} zł", product.Price));
 
         }
     }
