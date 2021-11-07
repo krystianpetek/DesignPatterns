@@ -63,3 +63,56 @@ namespace prototyp
         }
     }
 }
+
+
+//using System;
+//using System.Collections.Generic;
+
+//public abstract class <nazwa-klasy-bazowej>
+//{
+//  public ProductPrototype(decimal price)
+//{
+//    Price = price;
+//}
+
+//public ProductPrototype Clone()
+//{
+//    return (ProductPrototype)this.MemberwiseClone();
+//}
+//}
+
+//public class Bread : ProductPrototype
+//{
+//    public Bread(decimal price) : base(price) { }
+//}
+
+//public class Supermarket
+//{
+
+//    private Dictionary<string, ProductPrototype> _productList = new Dictionary<string, ProductPrototype>();
+
+//    public void AddProduct(string key, ProductPrototype productPrototype)
+//    {
+//        _productList.Add(key, productPrototype);
+//    }
+
+//    public ProductPrototype GetClonedProduct(string key)
+//    {
+//        return < powinno - zwracac - sklonowany - element - z - kolekcji >
+//    }
+
+//}
+
+
+//class MainClass
+//{
+//    public static void Main(string[] args)
+//    {
+//        Supermarket supermarket = new Supermarket();
+//        supermarket.AddProduct("Butter", new Butter(5.30m));
+
+
+//        var product = supermarket.GetClonedProduct("Butter");
+//        Console.WriteLine(String.Format("Bread - {0} zł", product.Price));
+//    }
+//}
