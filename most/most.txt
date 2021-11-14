@@ -1,0 +1,11 @@
+Instrukcje
+Rozszerz poniższy kod, umożliwiając tworzenie telewizorów i pilotów różnego rodzaju.
+
+Pilot Harmony włącza telewizor...
+Telewizor LG włączony.
+Kanał: 1
+Pilot Philips włącza telewizor...
+Telewizor Philips włączony.
+Pilot Philips zmienia kanal
+Telewizor Philips, kanal 100
+Kanał: 100
