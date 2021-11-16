@@ -67,13 +67,32 @@ namespace ExerciseDecorator
             base.JustDoIt();
         }
     }
+    public class GolfEquipment : ExerciseEquipmentDecorator
+    {
+        public GolfEquipment(IExercise exercise) : base(exercise)
+        {
+            exercise.AddEquipment("balls");
+            exercise.AddEquipment("golf club");
+        }
+
+        public override void JustDoIt()
+        {
+            Console.WriteLine("I'm about to play golf");
+            base.JustDoIt();
+        }
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
-            var runningAndSwimming = new SwimmingPoolEquipment(new RunningEquipment(new Exercise()));
+            var swimming = new SwimmingPoolEquipment(new Exercise());
+            var runningAndSwimming = new RunningEquipment(new SwimmingPoolEquipment(new Exercise()));
+            var swimmingAndGolf = new SwimmingPoolEquipment(new GolfEquipment(new Exercise()));
+            swimming.JustDoIt();
             runningAndSwimming.JustDoIt();
+            swimmingAndGolf.JustDoIt();
+
         }
     }
 

@@ -8,13 +8,14 @@ namespace WzorzecFasada
     interface IUserService
     {
         void CreateUser(string email);
+        void DeleteUser(string email);
     }
 
     static class EmailNotification
     {
         public static void SendEmail(string to, string subject)
         {
-            Console.WriteLine("Sending an email");
+            Console.WriteLine($"{subject}: {to}");
         }
     }
 
@@ -27,15 +28,22 @@ namespace WzorzecFasada
 
         public bool IsEmailFree(string email)
         {
-            throw new NotImplementedException();
-            //dopisz implementacje, która zwróci informacje o tym czy email jest dostępny
+            if (users.Contains(email)) return false;
+            else return true;
         }
 
         public void AddUser(string email)
         {
-            throw new NotImplementedException();
-            //dopisz implementacje, która doda użytkownika do listy
+            users.Add(email);
         }
+        public void DeleteUser(string email)
+        {
+            Console.WriteLine($"Przed usunięciem: {users.Count}");
+            Console.WriteLine($"Wywołuje operacje usunięcia dla uzytkownika: {email}");
+            users.Remove(email);
+            Console.WriteLine($"Po usunięciu: {users.Count}");
+        }
+        public List<string> ShowList => users;
     }
 
     static class Validators
@@ -51,6 +59,7 @@ namespace WzorzecFasada
     class UserService : IUserService
     {
         private readonly UserRepository userRepository = new UserRepository();
+
         public void CreateUser(string email)
         {
             if (!Validators.IsValidEmail(email))
@@ -58,10 +67,19 @@ namespace WzorzecFasada
                 throw new ArgumentException("Błędny email");
             }
 
-            // TODO: dodaj sprawdzenie czy email jest wolny, jeśli nie to wyrzuć wyjątek, jeśli tak, kontynuuj wykonywanie funkcji
+            if (!(userRepository.IsEmailFree(email)))
+                throw new ArgumentException("Email jest zajęty");
 
             userRepository.AddUser(email);
             EmailNotification.SendEmail(email, "Welcome to our service");
+        }
+
+        public void DeleteUser(string email)
+        {
+            if (userRepository.IsEmailFree(email))
+                throw new ArgumentException("Użytkownik nie istnieje");
+            userRepository.DeleteUser(email);
+            EmailNotification.SendEmail(email, "Twoje konto zostało usunięte");
         }
     }
 
@@ -70,6 +88,8 @@ namespace WzorzecFasada
         static void Main(string[] args)
         {
             IUserService userService = new UserService();
+            userService.CreateUser("someemail@gmail.com");
+            userService.DeleteUser("someemail@gmail.com");
             userService.CreateUser("someemail@gmail.com");
         }
     }

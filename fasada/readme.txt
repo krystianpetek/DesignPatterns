@@ -9,8 +9,6 @@ wysłanie maila do użytkownika, z potwierdzeniem założenia konta
 Zaczniemy od implementacji brakujących fragmentów kodu (TODO, NotImplementedException), następnie stworzymy metodę umożliwiającą usunięcie użytkownika.
 
 Na usunięcie użytkownika powinno składać się:
-
-Na usunięcie użytkownika powinno składać się:
 sprawdzenie czy użytkownik istnieje (jeśli nie to przerywamy proces wyrzuceniem wyjątku)
 usunięcie użytkownika z bazy danych (lista na potrzeby zadania)
 wysłanie maila do użytkownika potwierdzającego usunięcie konta
