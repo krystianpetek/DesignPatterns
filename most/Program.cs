@@ -1,90 +1,88 @@
 ﻿using System;
 
-namespace most
-{ 
-	public interface ITelewizor
+
+public interface ITelewizor
+{
+	int Kanal { get; set; }
+	void ZmienKanal(int kanal);
+}
+
+public class TvLg : ITelewizor
+{
+
+	public TvLg()
 	{
-		int Kanal { get; set; }
-		void ZmienKanal(int kanal);
+		this.Kanal = 1;
 	}
 
-	public class TvLg : ITelewizor
+	public int Kanal { get; set; }
+
+	public void Wlacz()
 	{
-
-		public TvLg()
-		{
-			this.Kanal = 1;
-		}
-
-		public int Kanal { get; set; }
-
-		public void Wlacz()
-		{
-			Console.WriteLine("Telewizor LG włączony.");
-		}
-
-		public void Wylacz()
-		{
-			throw new NotImplementedException();
-		}
-
-		public void ZmienKanal(int kanal)
-		{
-			throw new NotImplementedException();
-		}
-
+		Console.WriteLine("Telewizor LG włączony.");
 	}
 
-	public abstract class PilotAbstrakcyjny
+	public void Wylacz()
 	{
-
-		private ITelewizor tv;
-
-		public PilotAbstrakcyjny(ITelewizor tv)
-		{
-			this.tv = tv;
-		}
-
-		public void ZmienKanal(int kanal)
-		{
-			tv.ZmienKanal(kanal);
-		}
-
-		public abstract void DoWlacz();
-
+		throw new NotImplementedException();
 	}
 
-	public class PilotHarmony : PilotAbstrakcyjny
+	public void ZmienKanal(int kanal)
 	{
-
-		public PilotHarmony(ITelewizor tv) : base(tv) { }
-
-		public override void DoWlacz()
-		{
-			Console.WriteLine("Pilot Harmony włącza telewizor...");
-		}
-
-		public void DoWylacz()
-		{
-
-		}
+		throw new NotImplementedException();
 	}
 
+}
 
+public abstract class PilotAbstrakcyjny
+{
 
-	class Program
+	private ITelewizor tv;
+
+	public PilotAbstrakcyjny(ITelewizor tv)
 	{
-		public static void Main(string[] args)
-		{
+		this.tv = tv;
+	}
 
-			ITelewizor tv = new TvLg();
-			PilotAbstrakcyjny pilotHarmony = new PilotHarmony(tv);
+	public void ZmienKanal(int kanal)
+	{
+		tv.ZmienKanal(kanal);
+	}
 
-			pilotHarmony.DoWlacz();
-			pilotHarmony.DoWylacz();
-			Console.WriteLine("Kanał: " + tv.Kanal);
+	public abstract void DoWlacz();
 
-		}
+}
+
+public class PilotHarmony : PilotAbstrakcyjny
+{
+
+	public PilotHarmony(ITelewizor tv) : base(tv) { }
+
+	public override void DoWlacz()
+	{
+		Console.WriteLine("Pilot Harmony włącza telewizor...");
+	}
+
+	public void DoWylacz()
+	{
+
+	}
+}
+
+
+
+class Program
+{
+	public static void Main(string[] args)
+	{
+
+		ITelewizor tv = new TvLg();
+		PilotAbstrakcyjny pilotHarmony = new PilotHarmony(tv);
+
+		pilotHarmony.DoWlacz();
+		pilotHarmony.DoWylacz();
+		Console.WriteLine("Kanał: " + tv.Kanal);
+
 	}
 }
 

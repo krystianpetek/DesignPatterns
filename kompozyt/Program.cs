@@ -1,162 +1,124 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace kompozyt
+public interface Kompozyt
 {
-    public interface IExercise
+    void DodajElement(Kompozyt element);
+    void UsunElement(Kompozyt element);
+}
+
+public class Lisc : Kompozyt
+{
+
+    public string nazwa { get; set; }
+
+    public void Renderuj()
     {
-        void JustDoIt();
-        void AddEquipment(string equipmentName);
+        Console.WriteLine(nazwa + " renderowanie...");
     }
 
-    public class Exercise : IExercise
-    {
-        public List<string> _requiredEquipment = new List<string>();
 
-        public List<string> RequiredEquipment { get => _requiredEquipment; }
+    // konstruktor
 
-        public void AddEquipment(string equipmentName) => RequiredEquipment.Add(equipmentName);
-
-        public void JustDoIt()
-        {
-            Console.WriteLine("I need to pack:");
-            RequiredEquipment.ForEach(x => Console.WriteLine(x));
-            Console.WriteLine("Starting exercise");
-        }
-    }
-
-    public abstract class ExerciseEquipmentDecorator : IExercise
-    {
-        IExercise _exercise;
-
-        public ExerciseEquipmentDecorator(IExercise exercise)
-        {
-            _exercise = exercise;
-        }
-
-        public virtual void JustDoIt() => _exercise.JustDoIt();
-
-        public void AddEquipment(string equipmentName) => _exercise.AddEquipment(equipmentName);
-    }
-
-    public class RunningEquipment : ExerciseEquipmentDecorator
-    {
-        public RunningEquipment(IExercise exercise) : base(exercise)
-        {
-            exercise.AddEquipment("shoes");
-        }
-
-        public override void JustDoIt()
-        {
-            Console.WriteLine("I'm about to run");
-            base.JustDoIt();
-        }
-    }
-
-    public class SwimmingPoolEquipment : ExerciseEquipmentDecorator
-    {
-        public SwimmingPoolEquipment(IExercise exercise) : base(exercise)
-        {
-            exercise.AddEquipment("flip flops");
-        }
-
-        public override void JustDoIt()
-        {
-            Console.WriteLine("I'm about to swim");
-            base.JustDoIt();
-        }
-    }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var runningAndSwimming = new SwimmingPoolEquipment(new RunningEquipment(new Exercise()));
-            runningAndSwimming.JustDoIt();
-        }
-    }
+    // 2 brakujące metody których wymaga interfejs
 
 }
 
 
+public class Wezel : Kompozyt
+{
+
+    private List<Kompozyt> Lista = new List<Kompozyt>();
+
+    public string nazwa { get; set; }
+
+    public void Renderuj()
+    {
+        //rozpoczęcie renderowania
+
+        //foreach item.Renderuj(); 
+
+        //zakończenie renderowania
+    }
+
+    // 2 brakujące metody 
+
+}
+
+
+class MainClass
+{
+    public static void Main(string[] args)
+    {
+        //należy zainicjalizowac obiekt korzen    
+        korzen.nazwa = "Korzeń";
+
+        Wezel wezel2 = new Wezel();
+        wezel2.nazwa = "Węzeł 2";
+        korzen.DodajElement(wezel2);
+        //  definicje struktury
+        //
+
+        korzen.Renderuj();
+
+    }
+}
 
 //using System;
 //using System.Collections.Generic;
 
-//namespace ExerciseDecorator
-//{
-//    public interface IExercise
-//    {
-//        void JustDoIt();
-//        void AddEquipment(string equipmentName);
-//    }
+//public interface Kompozyt {
+//  void DodajElement(Kompozyt element);
+//  void UsunElement(Kompozyt element);
+//}
 
-//    public class Exercise : IExercise
-//    {
-//        public List<string> _requiredEquipment = new List<string>();
+//public class Lisc : Kompozyt {
+  
+//  public string nazwa { get; set; }
 
-//        public List<string> RequiredEquipment { get => _requiredEquipment; }
+//  public void Renderuj(){
+//    Console.WriteLine( nazwa + " renderowanie...");
+//  }
 
-//        public void AddEquipment(string equipmentName) => RequiredEquipment.Add(equipmentName);
 
-//        public void JustDoIt()
-//        {
-//            Console.WriteLine("I need to pack:");
-//            RequiredEquipment.ForEach(x => Console.WriteLine(x));
-//            Console.WriteLine("Starting exercise");
-//        }
-//    }
+//  // konstruktor
+    
+//  // 2 brakujące metody których wymaga interfejs
 
-//    public abstract class ExerciseEquipmentDecorator : IExercise
-//    {
-//        IExercise _exercise;
+//}
 
-//        public ExerciseEquipmentDecorator(IExercise exercise)
-//        {
-//            _exercise = exercise;
-//        }
 
-//        public virtual void JustDoIt() => _exercise.JustDoIt();
+//public class Wezel : Kompozyt{
 
-//        public void AddEquipment(string equipmentName) => _exercise.AddEquipment(equipmentName);
-//    }
+//  private List<Kompozyt> Lista=new List<Kompozyt>();
 
-//    public class RunningEquipment : ExerciseEquipmentDecorator
-//    {
-//        public RunningEquipment(IExercise exercise) : base(exercise)
-//        {
-//            exercise.AddEquipment("shoes");
-//        }
+//  public string nazwa { get; set; }
 
-//        public override void JustDoIt()
-//        {
-//            Console.WriteLine("I'm about to run");
-//            base.JustDoIt();
-//        }
-//    }
+//  public void Renderuj(){
+//    //rozpoczęcie renderowania
+    
+//    //foreach item.Renderuj(); 
+    
+//    //zakończenie renderowania
+//  }
 
-//    public class SwimmingPoolEquipment : ExerciseEquipmentDecorator
-//    {
-//        public SwimmingPoolEquipment(IExercise exercise) : base(exercise)
-//        {
-//            exercise.AddEquipment("flip flops");
-//        }
+//  // 2 brakujące metody 
+  
+//}
 
-//        public override void JustDoIt()
-//        {
-//            Console.WriteLine("I'm about to swim");
-//            base.JustDoIt();
-//        }
-//    }
 
-//    class Program
-//    {
-//        static void Main(string[] args)
-//        {
-//            var runningAndSwimming = new SwimmingPoolEquipment(new RunningEquipment(new Exercise()));
-//            runningAndSwimming.JustDoIt();
-//        }
-//    }
+//class MainClass {
+//  public static void Main (string[] args) {
+//    //należy zainicjalizowac obiekt korzen    
+//    korzen.nazwa = "Korzeń";
 
+//    Wezel wezel2 = new Wezel();
+//    wezel2.nazwa = "Węzeł 2";
+//    korzen.DodajElement(wezel2);
+//    //  definicje struktury
+//    //
+    
+//    korzen.Renderuj();
+    
+//  }
 //}
