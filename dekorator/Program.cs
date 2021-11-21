@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace ExerciseDecorator
@@ -13,11 +12,8 @@ namespace ExerciseDecorator
     public class Exercise : IExercise
     {
         public List<string> _requiredEquipment = new List<string>();
-
         public List<string> RequiredEquipment { get => _requiredEquipment; }
-
         public void AddEquipment(string equipmentName) => RequiredEquipment.Add(equipmentName);
-
         public void JustDoIt()
         {
             Console.WriteLine("I need to pack:");
@@ -29,14 +25,11 @@ namespace ExerciseDecorator
     public abstract class ExerciseEquipmentDecorator : IExercise
     {
         IExercise _exercise;
-
         public ExerciseEquipmentDecorator(IExercise exercise)
         {
             _exercise = exercise;
         }
-
         public virtual void JustDoIt() => _exercise.JustDoIt();
-
         public void AddEquipment(string equipmentName) => _exercise.AddEquipment(equipmentName);
     }
 
@@ -46,7 +39,6 @@ namespace ExerciseDecorator
         {
             exercise.AddEquipment("shoes");
         }
-
         public override void JustDoIt()
         {
             Console.WriteLine("I'm about to run");
@@ -60,7 +52,6 @@ namespace ExerciseDecorator
         {
             exercise.AddEquipment("flip flops");
         }
-
         public override void JustDoIt()
         {
             Console.WriteLine("I'm about to swim");
@@ -71,10 +62,9 @@ namespace ExerciseDecorator
     {
         public GolfEquipment(IExercise exercise) : base(exercise)
         {
-            exercise.AddEquipment("balls");
             exercise.AddEquipment("golf club");
+            exercise.AddEquipment("balls");
         }
-
         public override void JustDoIt()
         {
             Console.WriteLine("I'm about to play golf");
@@ -87,21 +77,17 @@ namespace ExerciseDecorator
         static void Main(string[] args)
         {
             var swimming = new SwimmingPoolEquipment(new Exercise());
-            var runningAndSwimming = new RunningEquipment(new SwimmingPoolEquipment(new Exercise()));
+            var runningAndSwimming = new SwimmingPoolEquipment(new RunningEquipment(new Exercise()));
             var swimmingAndGolf = new SwimmingPoolEquipment(new GolfEquipment(new Exercise()));
             swimming.JustDoIt();
+            Console.WriteLine();
             runningAndSwimming.JustDoIt();
+            Console.WriteLine(); 
             swimmingAndGolf.JustDoIt();
 
         }
     }
-
 }
-
-
-
-
-
 
 //using System;
 //using System.Collections.Generic;
@@ -180,5 +166,4 @@ namespace ExerciseDecorator
 //            runningAndSwimming.JustDoIt();
 //        }
 //    }
-
 //}

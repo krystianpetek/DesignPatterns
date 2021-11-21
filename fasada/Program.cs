@@ -9,13 +9,14 @@ namespace WzorzecFasada
     {
         void CreateUser(string email);
         void DeleteUser(string email);
+        void NumerOfAddress();
     }
 
     static class EmailNotification
     {
         public static void SendEmail(string to, string subject)
         {
-            Console.WriteLine($"{subject}: {to}");
+            Console.WriteLine($"{subject} {to}");
         }
     }
 
@@ -36,12 +37,9 @@ namespace WzorzecFasada
         {
             users.Add(email);
         }
-        public void DeleteUser(string email)
+        public void RemoveUser(string email)
         {
-            Console.WriteLine($"Przed usunięciem: {users.Count}");
-            Console.WriteLine($"Wywołuje operacje usunięcia dla uzytkownika: {email}");
             users.Remove(email);
-            Console.WriteLine($"Po usunięciu: {users.Count}");
         }
         public List<string> ShowList => users;
     }
@@ -64,11 +62,11 @@ namespace WzorzecFasada
         {
             if (!Validators.IsValidEmail(email))
             {
-                throw new ArgumentException("Błędny email");
+                throw new ArgumentException("Wrong email");
             }
 
             if (!(userRepository.IsEmailFree(email)))
-                throw new ArgumentException("Email jest zajęty");
+                throw new ArgumentException("Email just exists, choose other");
 
             userRepository.AddUser(email);
             EmailNotification.SendEmail(email, "Welcome to our service");
@@ -77,10 +75,12 @@ namespace WzorzecFasada
         public void DeleteUser(string email)
         {
             if (userRepository.IsEmailFree(email))
-                throw new ArgumentException("Użytkownik nie istnieje");
-            userRepository.DeleteUser(email);
-            EmailNotification.SendEmail(email, "Twoje konto zostało usunięte");
+                throw new ArgumentException("User not exists");
+            userRepository.RemoveUser(email);
+            EmailNotification.SendEmail(email, "Goodbye");
         }
+        public void NumerOfAddress() => Console.WriteLine($"Aktualna liczba adresow: {userRepository.ShowList.Count}");
+
     }
 
     class Program
@@ -88,16 +88,15 @@ namespace WzorzecFasada
         static void Main(string[] args)
         {
             IUserService userService = new UserService();
+            userService.NumerOfAddress();
             userService.CreateUser("someemail@gmail.com");
-            userService.DeleteUser("someemail@gmail.com");
-            userService.CreateUser("someemail@gmail.com");
+            userService.NumerOfAddress();
+            userService.DeleteUser("john.doe@gmail.com");
+            userService.NumerOfAddress();
         }
     }
 
 }
-
-
-
 
 //using System;
 //using System.Collections.Generic;
@@ -165,13 +164,17 @@ namespace WzorzecFasada
 //        }
 //    }
 
-//    class Program
+//class Program
+//{
+//    static void Main(string[] args)
 //    {
-//        static void Main(string[] args)
-//        {
-//            IUserService userService = new UserService();
-//            userService.CreateUser("someemail@gmail.com");
-//        }
+//        IUserService userService = new UserService();
+//        // TODO: wyświetlić liczbę
+//        userService.CreateUser("someemail@gmail.com");
+//        // TODO: wyświetlić liczbę
+//        // TODO: usunąć użytkownika
+//        // TODO: wyświetlić liczbę
 //    }
+//}
 
 //}
