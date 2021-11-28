@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31829.152
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KolkoKrzyzyk", "KolkoKrzyzyk\KolkoKrzyzyk.csproj", "{25963FA8-7622-488D-B83C-51EBBAAAF501}"
 EndProject
@@ -25,9 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kompozyt", "kompozyt\kompoz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "most", "most\most.csproj", "{888C607B-5D05-4425-83DD-B03F642DC3C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pelnomocnik", "Pelnomocnik\Pelnomocnik.csproj", "{D9813586-A2DF-412F-952A-8537F2671A47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pelnomocnik", "Pelnomocnik\Pelnomocnik.csproj", "{D9813586-A2DF-412F-952A-8537F2671A47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_klasy_kolekcje", "CS_klasy_kolekcje\CS_klasy_kolekcje.csproj", "{005D6E55-3118-4F02-B3A5-2989A2080664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_klasy_kolekcje", "CS_klasy_kolekcje\CS_klasy_kolekcje.csproj", "{005D6E55-3118-4F02-B3A5-2989A2080664}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "obserwator", "obserwator\obserwator.csproj", "{8AED8F85-25EE-4DE4-9BDC-EF3DCFF5709A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lancuchZobowiazan", "lancuchZobowiazan\lancuchZobowiazan.csproj", "{EFD4086C-69D3-47BA-9605-4C83CCB4513D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,14 @@ Global
 		{005D6E55-3118-4F02-B3A5-2989A2080664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{005D6E55-3118-4F02-B3A5-2989A2080664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{005D6E55-3118-4F02-B3A5-2989A2080664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AED8F85-25EE-4DE4-9BDC-EF3DCFF5709A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AED8F85-25EE-4DE4-9BDC-EF3DCFF5709A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AED8F85-25EE-4DE4-9BDC-EF3DCFF5709A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AED8F85-25EE-4DE4-9BDC-EF3DCFF5709A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD4086C-69D3-47BA-9605-4C83CCB4513D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD4086C-69D3-47BA-9605-4C83CCB4513D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD4086C-69D3-47BA-9605-4C83CCB4513D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD4086C-69D3-47BA-9605-4C83CCB4513D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
