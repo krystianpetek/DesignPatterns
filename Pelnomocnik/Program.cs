@@ -7,8 +7,7 @@ public interface IClient
 
 public class RealClient : IClient
 {
-    //
-    //
+    string Data;
 
     public RealClient()
     {
@@ -18,8 +17,7 @@ public class RealClient : IClient
 
     public string GetData()
     {
-        //
-        //
+        return Data;
     }
 }
 
@@ -27,21 +25,21 @@ public class RealClient : IClient
 public class ProxyClient : IClient
 {
     RealClient client = null;
-    //
-    //
-    private _pass ="jakies haslo";
-        public ProxyClient(string password)
+    bool _authenticated = false;
+    string data = null;
+    private string _pass = "dobrehaslo";
+    public ProxyClient(string password)
     {
         if (password == _pass)
         {
-            //
-            //
+            _authenticated = true;
+            Console.WriteLine("ProxyClient: Initialized");
+            client = new RealClient();
         }
         else
         {
             _authenticated = false; // dla pewności :)
-                                    //
-                                    //
+            Console.WriteLine("ProxyClient: Access denied");
         }
     }
 
@@ -49,11 +47,9 @@ public class ProxyClient : IClient
     {
         if (_authenticated)
         {
-            //
-            //
+            data = $"Data from Proxy Client = {client.GetData()}";
         }
-        //
-        //
+        return data;
     }
 }
 
@@ -62,18 +58,13 @@ class Program
 {
     static void Main(string[] args)
     {
-
         ProxyClient proxy1 = new ProxyClient("zlehaslo");
-        //
-        //
-
+        Console.WriteLine(proxy1.GetData());
         ProxyClient proxy2 = new ProxyClient("dobrehaslo");
-        //
-        //
-
+        Console.WriteLine(proxy2.GetData());
     }
-
 }
+
 
 
 //using System;
