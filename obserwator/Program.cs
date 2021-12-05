@@ -19,8 +19,8 @@ namespace obserwator
     public interface ISubject
     {
         void Attach(IObserver observer);
-        //
-        //
+        void Detach(IObserver observer);
+        void Notify();
     }
 
     public class NewsAgency : ISubject
@@ -37,10 +37,6 @@ namespace obserwator
 
         private List<IObserver> Observers = new List<IObserver>();
      
-        //
-        //
-        //
-
         public void Detach(IObserver observer)
         {
             this.Observers.Remove(observer);
