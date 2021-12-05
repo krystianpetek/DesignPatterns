@@ -16,7 +16,7 @@ public class Lisc : Kompozyt
 
     public void DodajElement(Kompozyt element)
     {
-        
+        throw new Exception("Dany element nie obsługuje dodawania elementów");
     }
 
     public void Renderuj()

@@ -1,5 +1,4 @@
 ﻿using System;
-
 public interface IClient
 {
     string GetData();
@@ -8,19 +7,16 @@ public interface IClient
 public class RealClient : IClient
 {
     string Data;
-
     public RealClient()
     {
         Console.WriteLine("RealClient: Initialized");
         Data = "WSEI data";
     }
-
     public string GetData()
     {
         return Data;
     }
 }
-
 
 public class ProxyClient : IClient
 {
@@ -52,7 +48,6 @@ public class ProxyClient : IClient
         return data;
     }
 }
-
 
 class Program
 {

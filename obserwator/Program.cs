@@ -30,12 +30,13 @@ namespace obserwator
 
         public void setNewsHeadline(Genre state, string news)
         {
-            //
-            //
+            NewsHeadline = news;
+            State = state;
+            Notify();
         }
 
         private List<IObserver> Observers = new List<IObserver>();
-
+     
         //
         //
         //
@@ -52,6 +53,11 @@ namespace obserwator
                 observer.Update(this);
             }
         }
+
+        public void Attach(IObserver observer)
+        {
+            this.Observers.Add(observer);
+        }
     }
 
     class DailyEconomy : IObserver
@@ -64,11 +70,39 @@ namespace obserwator
             }
         }
     }
+    internal class NationalGeographic :IObserver
+    {
+        public void Update(ISubject subject)
+        {
+            if ((subject as NewsAgency).State == Genre.Science)
+            {
+                Console.WriteLine($"NationalGeographic publikuje artykuł \"{(subject as NewsAgency).NewsHeadline}\"");
+            }
+        }
+    }
 
-    //
-    //
-    //
-    //
+    internal class NewYorkTimes : IObserver
+    {
+        public void Update(ISubject subject)
+        {
+            if ((subject as NewsAgency).State == Genre.Science)
+            {
+                Console.WriteLine($"NewYorkTimes publikuje artykuł \"{(subject as NewsAgency).NewsHeadline}\"");
+            }
+            if ((subject as NewsAgency).State == Genre.Sport)
+            {
+                Console.WriteLine($"NewYorkTimes publikuje artykuł \"{(subject as NewsAgency).NewsHeadline}\"");
+            }
+            if ((subject as NewsAgency).State == Genre.Economy)
+            {
+                Console.WriteLine($"NewYorkTimes publikuje artykuł \"{(subject as NewsAgency).NewsHeadline}\"");
+            }
+            if ((subject as NewsAgency).State == Genre.Politics)
+            {
+                Console.WriteLine($"NewYorkTimes publikuje artykuł \"{(subject as NewsAgency).NewsHeadline}\"");
+            }
+        }
+    }
 
     class Program
     {
@@ -80,14 +114,16 @@ namespace obserwator
             var newYork = new NewYorkTimes();
             var nationalGeographic = new NationalGeographic();
 
-            //
-            //
-            //
+            newsAgency.Attach(dailyEconomy);
+            newsAgency.Attach(newYork);
+            newsAgency.Attach(nationalGeographic);
 
             newsAgency.setNewsHeadline(Genre.Economy, "USA is going bancrupt!");
-            //
-            //
-            //
+            newsAgency.setNewsHeadline(Genre.Science, "Life on Alpha Centauri");
+            newsAgency.setNewsHeadline(Genre.Sport, "Adam Małysz is the greatest sportsman in the history of mankind");
+            newsAgency.setNewsHeadline(Genre.Economy, "CD Project RED value has grown by 500% in 2020");
+            newsAgency.setNewsHeadline(Genre.Science, "Kirkendall effect causing airplanes' engine deteriorate");
+            newsAgency.setNewsHeadline(Genre.Politics, "Texas is going bancrupt!");
 
             //deatach?
 
@@ -95,6 +131,8 @@ namespace obserwator
             //
         }
     }
+
+    
 }
 
 
