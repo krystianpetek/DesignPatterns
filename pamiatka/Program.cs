@@ -6,7 +6,6 @@ class Zycie
 
     private string czas;
 
-
     public Pamiatka zapiszPamiatke()
     {
         //
@@ -15,7 +14,7 @@ class Zycie
 
     public void przywrocPamiatke(Pamiatka pamiatka)
     {
-        // czas = ??
+        // czas = 
         //
         //
     }

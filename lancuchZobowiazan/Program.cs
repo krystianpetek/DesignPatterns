@@ -62,6 +62,36 @@ namespace lancuchZobowiazan
             }
         }
     }
+    
+    class HardWarning : WarningHandler
+    {
+        public override void Handle(int daysOfPaymentDelay)
+        {
+            if (daysOfPaymentDelay > 5 && daysOfPaymentDelay <= 10) 
+            {
+                Console.WriteLine("Send SMS notification");
+            }
+            else
+            {
+                base.Handle(daysOfPaymentDelay);
+            }
+        }
+    }
+    
+    class FinishWarning : WarningHandler
+    {
+        public override void Handle(int daysOfPaymentDelay)
+        {
+            if (daysOfPaymentDelay > 10)
+            {
+                Console.WriteLine("Lock Account");
+            }
+            else
+            {
+                base.Handle(daysOfPaymentDelay);
+            }
+        }
+    }
 
     class Program
     {
@@ -69,10 +99,14 @@ namespace lancuchZobowiazan
         {
             IWarningHandler lightWarningHandler = new LightWarning();
             IWarningHandler mediumWarningHandler = new MediumWarning();
+            IWarningHandler hardWarningHandler = new HardWarning();
+            IWarningHandler finishWarningHandler = new FinishWarning();
 
             lightWarningHandler.SetNext(mediumWarningHandler);
+            mediumWarningHandler.SetNext(hardWarningHandler);
+            hardWarningHandler.SetNext(finishWarningHandler);
 
-            lightWarningHandler.Handle(2);
+            lightWarningHandler.Handle(11);
         }
     }
 
