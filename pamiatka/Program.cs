@@ -3,20 +3,31 @@ using System.Collections.Generic;
 
 class Zycie
 {
-
+    Pamiatka pamiatka;
     private string czas;
-
+    public string Czas { 
+        get=> czas; 
+        
+        set
+        {
+            if (int.Parse(value) > 0)
+            {
+                czas = value;
+                Console.WriteLine("Skok do roku: " + czas);
+            }
+        } 
+    }
     public Pamiatka zapiszPamiatke()
     {
-        //
-        //
+        Console.WriteLine("stan zapisany");
+        return pamiatka = new Pamiatka(czas);
     }
 
     public void przywrocPamiatke(Pamiatka pamiatka)
     {
-        // czas = 
-        //
-        //
+        Console.Write($"Przywrócono rok: ");
+        czas = pamiatka.pobierzCzas();
+        Console.WriteLine(czas);
     }
 }
 
@@ -26,14 +37,12 @@ public class Pamiatka
 
     public Pamiatka(string czas)
     {
-        //
-        //
+        this.czas = czas;
     }
 
     public string pobierzCzas()
     {
-        //
-        //
+        return czas;
     }
 }
 

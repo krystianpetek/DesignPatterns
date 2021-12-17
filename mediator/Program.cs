@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 
 
-//
-//
-//
+public interface IMediator
+{
+    
+}
+public interface IUzytkownik
+{
+
+}
+
 
 public class Mediator : IMediator
 {
