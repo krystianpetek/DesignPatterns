@@ -14,7 +14,7 @@ public class KomendaWlacz : IPolecenie
     Lampa lampa;
     public KomendaWlacz(Lampa lampa)
     {
-        this.lampa = lampa;
+        this.lampa = lampa; 
     }
     public void wykonaj()
     {
@@ -38,17 +38,15 @@ public class KomendaWylacz : IPolecenie
 
 public class Lampa
 {
-    private bool stan = false;
+    private bool stan { get; set; } = false;
     public void wlacz()
     {
         stan = true;
     }
-
     public void wylacz()
     {
         stan = false;
     }
-
     public bool sprawdz()
     {
         return stan;
@@ -60,15 +58,15 @@ public class Pilot
 {
     private IPolecenie polecenie;
 
-    internal void ustawPolecenie(IPolecenie przelacznik)
+    public void ustawPolecenie(IPolecenie przelacznik)
     {
         polecenie = przelacznik;
     }
-
-    internal void wcisnijGuzik()
+    public void wcisnijGuzik()
     {
         polecenie.wykonaj();
     }
+
 }
 
 
@@ -76,6 +74,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
         Lampa lampa = new Lampa();
 
         IPolecenie wlacz = new KomendaWlacz(lampa);
@@ -92,16 +91,8 @@ class Program
         pilot.ustawPolecenie(wylacz);
         pilot.wcisnijGuzik();
         Console.WriteLine(lampa.sprawdz() ? "Lampa włączona" : "Lampa wyłączona");
-
-
     }
 }
-
-
-
-
-
-
 
 
 
