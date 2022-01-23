@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "strategia", "strategia\stra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "projektKoncowy", "projektKoncowy\projektKoncowy.csproj", "{8E25D51F-A50A-4D0F-8C92-F7663AA3EBA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lancuchZobowiazan2", "lancuchZobowiazan2\lancuchZobowiazan2.csproj", "{EF97942D-E122-4D96-B32C-0AFD225836E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lancuchZobowiazan2", "lancuchZobowiazan2\lancuchZobowiazan2.csproj", "{EF97942D-E122-4D96-B32C-0AFD225836E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeRefactoring", "TicTacToeRefactoring\TicTacToeRefactoring.csproj", "{81D89DFC-1C60-4690-B9B5-2EF6C94FADAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +149,10 @@ Global
 		{EF97942D-E122-4D96-B32C-0AFD225836E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF97942D-E122-4D96-B32C-0AFD225836E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF97942D-E122-4D96-B32C-0AFD225836E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D89DFC-1C60-4690-B9B5-2EF6C94FADAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D89DFC-1C60-4690-B9B5-2EF6C94FADAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D89DFC-1C60-4690-B9B5-2EF6C94FADAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D89DFC-1C60-4690-B9B5-2EF6C94FADAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,28 +17,17 @@ namespace CS_klasy_kolekcje
             helloWorld();
 
             Generator x = new Generator();
-            
-            // pierwsza lista
-            for(int j = 0;j<100;j++)
-                lista.Add(x.GenerujStringi());
-            var find = lista.Find(x => x.Length > 5);
-            Console.WriteLine($"index: {lista.IndexOf(find)} wartość: {find}");
 
-            // druga lista
-            lista.Clear();
-            for (int j = 0;j<100;j++)
-                lista.Add(x.GenerujStringi());
-            int dlugoscNajkrotsza = lista[0].Length;
-            int index = 0;
-            for (int j = 0; j < lista.Count; j++)
-                if (dlugoscNajkrotsza > lista[j].Length)
-                {
-                    dlugoscNajkrotsza = lista[j].Length;
-                    index = j;
-                }
-            Console.WriteLine($"dlugość: {dlugoscNajkrotsza}, wartość: {lista[index]}");
+            PierwszaLista(x);
 
-            // trzecia lista
+            int dlugoscNajkrotsza, index;
+            DrugaLista(x, out dlugoscNajkrotsza, out index);
+            TrzeciaLista(x, out dlugoscNajkrotsza, out index);
+
+        }
+
+        private static void TrzeciaLista(Generator x, out int dlugoscNajkrotsza, out int index)
+        {
             lista.Clear();
             for (int j = 0; j < 100; j++)
                 lista.Add(x.GenerujStringi());
@@ -51,15 +40,38 @@ namespace CS_klasy_kolekcje
                     index = j;
                 }
             Console.WriteLine($"index: {index}, wartość: {lista[index]}");
-            
         }
+
+        private static void DrugaLista(Generator x, out int dlugoscNajkrotsza, out int index)
+        {
+            lista.Clear();
+            for (int j = 0; j < 100; j++)
+                lista.Add(x.GenerujStringi());
+            dlugoscNajkrotsza = lista[0].Length;
+            index = 0;
+            for (int j = 0; j < lista.Count; j++)
+                if (dlugoscNajkrotsza > lista[j].Length)
+                {
+                    dlugoscNajkrotsza = lista[j].Length;
+                    index = j;
+                }
+            Console.WriteLine($"dlugość: {dlugoscNajkrotsza}, wartość: {lista[index]}");
+        }
+
+        private static void PierwszaLista(Generator x)
+        {
+            for (int j = 0; j < 100; j++)
+                lista.Add(x.GenerujStringi());
+            var find = lista.Find(x => x.Length > 5);
+            Console.WriteLine($"index: {lista.IndexOf(find)} wartość: {find}");
+        }
+
         public static void helloWorld() => Console.WriteLine("hello world");
         public static int suma(int a, int b) => a + b; // funkcja lambda
     }
 
     public abstract class Animal
     {
-
         protected string name { get; set; }
         int _age { get; set; }
         int age
@@ -71,13 +83,12 @@ namespace CS_klasy_kolekcje
                     _age = value;
             }
         }
-        string sound { get; set; }
+        internal string sound { get; set; }
         public virtual void makeSound() => Console.WriteLine(sound);
     }
 
     public class Cat : Animal
     {
-
     }
 
     public class Dog : Animal
@@ -90,7 +101,6 @@ namespace CS_klasy_kolekcje
 
     public class Pig : Animal
     {
-
     }
 
     public class Generator
