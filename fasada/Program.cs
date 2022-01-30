@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace WzorzecFasada
+namespace fasada
 {
     interface IUserService
     {
@@ -65,7 +64,7 @@ namespace WzorzecFasada
                 throw new ArgumentException("Wrong email");
             }
 
-            if (!(userRepository.IsEmailFree(email)))
+            if (!userRepository.IsEmailFree(email))
                 throw new ArgumentException("Email just exists, choose other");
 
             userRepository.AddUser(email);

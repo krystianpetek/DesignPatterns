@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RefaktoryzacjaKolkoKrzyzyk
+namespace TicTacToeRefactoring
 {
     class Program
     {
@@ -98,13 +98,13 @@ namespace RefaktoryzacjaKolkoKrzyzyk
                 }
                 WIN(licznik);
             }
-            
+
             licznik = 0;
             for (int liniaX = 0; liniaX < wymiarTablicy; liniaX++)
             {
                 for (int liniaY = 0; liniaY < wymiarTablicy; liniaY++)
                 {
-                    if (liniaX + liniaY == wymiarTablicy-1)
+                    if (liniaX + liniaY == wymiarTablicy - 1)
                     {
                         if (box[liniaX, liniaY] == 'X')
                             licznik++;
@@ -112,7 +112,7 @@ namespace RefaktoryzacjaKolkoKrzyzyk
                             licznik--;
                     }
                 }
-                WIN(licznik);                
+                WIN(licznik);
             }
         }
 
@@ -160,8 +160,8 @@ namespace RefaktoryzacjaKolkoKrzyzyk
                 Console.Clear();
                 prog.WriteBoard();
                 Console.Write($"\nWhat box do you want to place {askMove} in? (1-{wymiarTablicy * wymiarTablicy})\n> ");
-                prog._error = !(int.TryParse(Console.ReadLine(),out selTemp));
-                if (selTemp > 0 && selTemp < (wymiarTablicy * wymiarTablicy) + 1)
+                prog._error = !int.TryParse(Console.ReadLine(), out selTemp);
+                if (selTemp > 0 && selTemp < wymiarTablicy * wymiarTablicy + 1)
                 {
                     int Xowa = (selTemp - 1) / wymiarTablicy;
                     int Yowa = (selTemp - 1) % wymiarTablicy;

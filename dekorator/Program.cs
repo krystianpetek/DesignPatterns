@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ExerciseDecorator
+namespace dekorator
 {
     public interface IExercise
     {
@@ -82,7 +82,7 @@ namespace ExerciseDecorator
             swimming.JustDoIt();
             Console.WriteLine();
             runningAndSwimming.JustDoIt();
-            Console.WriteLine(); 
+            Console.WriteLine();
             swimmingAndGolf.JustDoIt();
 
         }

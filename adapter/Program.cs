@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
 
-namespace WzorzecAdapter
+namespace adapter
 {
     //KOD Z ZEWNĘTRZNEJ BIBLIOTEKI
     public class UsersApi
@@ -52,7 +52,7 @@ namespace WzorzecAdapter
 
         public List<string> GetUserNames()
         {
-            string incompatibleApiResponse = this._adaptee
+            string incompatibleApiResponse = _adaptee
               .GetUsersXmlAsync()
               .GetAwaiter()
               .GetResult();
@@ -91,9 +91,9 @@ namespace WzorzecAdapter
             foreach (var podzial in linia)
             {
                 var imieNazwisko = podzial.Split(",");
-                userNames.Add(imieNazwisko[0] + " " + imieNazwisko[1]);                
+                userNames.Add(imieNazwisko[0] + " " + imieNazwisko[1]);
             }
-               
+
             return userNames;
         }
     }
@@ -131,7 +131,7 @@ namespace WzorzecAdapter
             int licznik = 0;
             foreach (var userName in users2)
             {
-                Console.WriteLine($"{++licznik}. "+ userName);
+                Console.WriteLine($"{++licznik}. " + userName);
             }
 
 
