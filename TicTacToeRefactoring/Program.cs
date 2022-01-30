@@ -4,33 +4,14 @@ namespace TicTacToeRefactoring
 {
     class Program
     {
-        private char winChar;
-        public char winPerson
-        {
-            get { return winChar; }
-            set { winChar = value; }
-        }
-        private bool hasWon;
-        public bool isWin
-        {
-            get { return hasWon; }
-            set { hasWon = value; }
-        }
-        private bool isX;
-        public bool isY
-        {
-            get { return isX; }
-            set { isX = value; }
-        }
-        private bool hasError;
-        public bool _error
-        {
-            get { return hasError; }
-            set { hasError = value; }
-        }
+        public char winPerson { get; set; }
+        public bool isWin { get; set; }
+        public bool isY { get; set; }
+        public bool _error { get; set; }
 
         private static int wymiarTablicy = 5;
-        private char[,] box;
+        private char[,] box = new char[wymiarTablicy, wymiarTablicy];
+
         public void WriteBoard()
         {
             for (int i = 0; i < wymiarTablicy; i++)
