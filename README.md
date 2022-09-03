@@ -1,2 +1,2 @@
 # WzorceProjektowe
- wzorce
+Zadania wzorce projektowe
