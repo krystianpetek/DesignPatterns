@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prototyp", "DesignPatterns_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fabrykaAbstrakcyjna", "DesignPatterns_StudyLabs\fabrykaAbstrakcyjna\fabrykaAbstrakcyjna.csproj", "{A5759127-EA82-4875-836C-69896DF44D3D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "adapter", "DesignPatterns_StudyLabs\adapter\adapter.csproj", "{381FBDF5-3D3F-4B52-8325-38D86AC46D74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "DesignPatterns_StudyLabs\Adapter\Adapter.csproj", "{381FBDF5-3D3F-4B52-8325-38D86AC46D74}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cwiczeniaExtra", "DesignPatterns_StudyLabs\cwiczeniaExtra\cwiczeniaExtra.csproj", "{D8BB6AC0-F5DD-41E3-9EBD-0EBE3CF1A1BB}"
 EndProject
@@ -39,11 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "polecenie", "DesignPatterns
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mediator", "DesignPatterns_StudyLabs\mediator\mediator.csproj", "{0AF1EB82-C43B-4AB1-AAB0-1B2AB238DECF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "stan", "DesignPatterns_StudyLabs\stan\stan.csproj", "{17F3B8B3-4947-4F03-93D1-214630B4BC3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "State", "DesignPatterns_StudyLabs\stan\State.csproj", "{17F3B8B3-4947-4F03-93D1-214630B4BC3A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "odwiedzajacy", "DesignPatterns_StudyLabs\odwiedzajacy\odwiedzajacy.csproj", "{CBCFCE96-2F26-48AB-B588-0E2F8570633F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "strategia", "DesignPatterns_StudyLabs\strategia\strategia.csproj", "{C5C18E9F-FC62-410D-8571-33414B4EC917}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy", "DesignPatterns_StudyLabs\strategia\Strategy.csproj", "{C5C18E9F-FC62-410D-8571-33414B4EC917}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "projektKoncowy", "DesignPatterns_StudyLabs\projektKoncowy\projektKoncowy.csproj", "{8E25D51F-A50A-4D0F-8C92-F7663AA3EBA3}"
 EndProject

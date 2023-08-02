@@ -1,0 +1,6 @@
+﻿<?xml version= "1.0" encoding= "UTF-8"?>
+<users>
+  <user name="John" surname="Doe"/>
+  <user name="John" surname="Wayne"/>
+  <user name="John" surname="Rambo"/>
+</users>
