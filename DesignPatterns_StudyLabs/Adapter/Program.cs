@@ -8,10 +8,10 @@ namespace Adapter;
 
 public static class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
         int counter;
-        List<string> users = new List<string>();
+        List<string> users;
         IRepositoryAdapter repositoryAdapter;
 
         #region XmlAdapter
