@@ -3,48 +3,48 @@ using Bridge.Contracts;
 
 namespace Bridge.Features.TvRemoteControls;
 
-public class HarmonyTvRemoteControl : ITvRemoteControl
+public class HarmonyTvRemoteControl : TvRemoteControl
 {
-    public ITelevision Television { get; set; }
+    private readonly ITelevision _television;
 
-    public HarmonyTvRemoteControl(ITelevision television)
+    public HarmonyTvRemoteControl(ITelevision television) : base(television)
     {
-        Television = television;
+        _television = television;
     }
 
-    public void TurnOn()
+    public override void TurnOn()
     {
-        if (Television.State)
+        if (_television.State)
         {
             Console.WriteLine("The TV is already turned on.");
             return;
         }
 
-        Television.TurnOn();
+        _television.TurnOn();
         Console.WriteLine("Harmony TV Remote Control turns on television...");
     }
 
-    public void TurnOff()
+    public override void TurnOff()
     {
-        if (!Television.State)
+        if (!_television.State)
         {
             Console.WriteLine("The TV is already turned off.");
             return;
         }
 
-        Television.TurnOff();
+        _television.TurnOff();
         Console.WriteLine("Harmony TV Remote Control turns off television...");
     }
 
-    public void ChangeChannel(int channel)
+    public override void ChangeChannel(int channel)
     {
-        if (!Television.State)
+        if (!_television.State)
         {
             Console.WriteLine("The TV is turned off.");
             return;
         }
 
-        Television.ChangeChannel(channel);
+        _television.ChangeChannel(channel);
         Console.WriteLine("Harmony TV Remote Control changes channel...");
     }
 }

@@ -10,8 +10,8 @@ public static class Program
     public static void Main()
     {
         ITelevision television = new LgTelevision();
-        ITvRemoteControl harmonyTvRemoteControl = new HarmonyTvRemoteControl(television);
-        ITvRemoteControl philipsTvRemoteControl = new PhilipsTvRemoteControl(television);
+        TvRemoteControl harmonyTvRemoteControl = new HarmonyTvRemoteControl(television);
+        TvRemoteControl philipsTvRemoteControl = new PhilipsTvRemoteControl(television);
 
         television.DisplayCurrentChannelAndState();
         harmonyTvRemoteControl.TurnOn();

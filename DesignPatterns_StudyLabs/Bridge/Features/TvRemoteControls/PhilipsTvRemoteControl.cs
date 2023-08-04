@@ -3,48 +3,48 @@ using Bridge.Contracts;
 
 namespace Bridge.Features.TvRemoteControls;
 
-public class PhilipsTvRemoteControl : ITvRemoteControl
+public class PhilipsTvRemoteControl : TvRemoteControl
 {
-    public ITelevision Television { get; set; }
+    private readonly ITelevision _television;
 
-    public PhilipsTvRemoteControl(ITelevision television)
+    public PhilipsTvRemoteControl(ITelevision television) : base(television)
     {
-        Television = television;
+        _television = television;
     }
 
-    public void TurnOn()
+    public override void TurnOn()
     {
-        if (Television.State)
+        if (_television.State)
         {
             Console.WriteLine("The TV is already turned on.");
             return;
         }
 
-        Television.TurnOn();
+        _television.TurnOn();
         Console.WriteLine("Philips TV Remote Control turns on television...");
     }
 
-    public void TurnOff()
+    public override void TurnOff()
     {
-        if (!Television.State)
+        if (!_television.State)
         {
             Console.WriteLine("The TV is already turned off.");
             return;
         }
 
-        Television.TurnOff();
+        _television.TurnOff();
         Console.WriteLine("Philips TV Remote Control turns off television...");
     }
 
-    public void ChangeChannel(int channel)
+    public override void ChangeChannel(int channel)
     {
-        if (!Television.State)
+        if (!_television.State)
         {
             Console.WriteLine("The TV is turned off.");
             return;
         }
 
-        Television.ChangeChannel(channel);
+        _television.ChangeChannel(channel);
         Console.WriteLine("Philips TV Remote Control changes channel...");
     }
 }
