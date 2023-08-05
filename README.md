@@ -9,3 +9,7 @@
 #### 2. Bridge pattern
 
 #### 3. Composite pattern
+
+#### 4. Decorator pattern
+
+
