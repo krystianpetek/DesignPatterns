@@ -1,10 +1,10 @@
 ﻿namespace Decorator.Contracts;
 
-public abstract class ExerciseEquipmentDecorator : IExercise
+public abstract class BaseEquipmentDecorator : IExercise
 {
     private readonly IExercise _exercise;
 
-    protected ExerciseEquipmentDecorator(IExercise exercise)
+    protected BaseEquipmentDecorator(IExercise exercise)
     {
         _exercise = exercise;
     }

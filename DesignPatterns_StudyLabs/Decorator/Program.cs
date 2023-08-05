@@ -8,9 +8,9 @@ public static class Program
 {
     public static void Main()
     {
-        var swimming = new SwimmingPoolEquipment(new Exercise());
-        var runningAndSwimming = new SwimmingPoolEquipment(new RunningEquipment(new Exercise()));
-        var swimmingAndGolf = new SwimmingPoolEquipment(new GolfEquipment(new Exercise()));
+        var swimming = new SwimmingPoolEquipmentDecorator(new Exercise());
+        var runningAndSwimming = new SwimmingPoolEquipmentDecorator(new RunningEquipmentDecorator(new Exercise()));
+        var swimmingAndGolf = new SwimmingPoolEquipmentDecorator(new GolfEquipmentDecorator(new Exercise()));
         swimming.Execute();
         Console.WriteLine();
         runningAndSwimming.Execute();

@@ -16,7 +16,7 @@ public class Exercise : IExercise
     public void AddEquipment(string equipmentName) => RequiredEquipment.Add(equipmentName);
     public void Execute()
     {
-        Console.WriteLine("I need to pack:");
+        Console.WriteLine("\tI need to pack:");
         RequiredEquipment.ForEach(x => Console.WriteLine(x));
         Console.WriteLine("Starting exercise");
     }
