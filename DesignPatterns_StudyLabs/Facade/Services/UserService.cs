@@ -1,7 +1,7 @@
 ﻿using System;
 using Facade.Contracts;
 using Facade.Repositories;
-using Facade.Utils;
+using Facade.Validators;
 
 namespace Facade.Services;
 

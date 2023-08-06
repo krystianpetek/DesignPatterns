@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Facade.Utils;
+namespace Facade.Validators;
 
 public static class EmailValidator
 {

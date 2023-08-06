@@ -14,3 +14,6 @@
 
 #### 5. Facade pattern
 
+#### 6. Flyweight pattern
+
+#### 7. Proxy pattern
