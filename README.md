@@ -12,4 +12,5 @@
 
 #### 4. Decorator pattern
 
+#### 5. Facade pattern
 
