@@ -1,5 +1,4 @@
 ﻿using System;
-using Proxy.Files;
 using Proxy.Two.Contracts;
 using Proxy.Two.Entities;
 
