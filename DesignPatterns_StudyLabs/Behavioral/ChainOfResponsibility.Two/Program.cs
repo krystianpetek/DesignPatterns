@@ -1,5 +1,7 @@
 ﻿using System;
 
+namespace ChainOfResponsibility.Two;
+
 public interface Lancuch
 {
     public void przetwarzaj(Powiadomienia powiadomienia);
@@ -24,15 +26,13 @@ public class BrakLancuch : Lancuch
     private Lancuch nastepneWLancuchu;
     public void ustawNastepne(Lancuch c)
     {
-        nastepneWLancuchu = c;        
+        nastepneWLancuchu = c;
     }
 
     public void przetwarzaj(Powiadomienia powiadomienia)
     {
         if (powiadomienia.pobierzLiczbe() <= 0)
-        {
             Console.WriteLine("Brak powiadomień");
-        }
         else
         {
             nastepneWLancuchu.przetwarzaj(powiadomienia);
@@ -45,9 +45,7 @@ public class MaloPowiadomien : Lancuch
     public void przetwarzaj(Powiadomienia powiadomienia)
     {
         if (powiadomienia.pobierzLiczbe() <= 5)
-        {
             Console.WriteLine("Mało powiadomień: " + powiadomienia.pobierzLiczbe());
-        }
         else
         {
             nastepneWLancuchu.przetwarzaj(powiadomienia);
@@ -64,7 +62,7 @@ public class DuzoPowiadomien : Lancuch
     public void przetwarzaj(Powiadomienia powiadomienia)
     {
         Console.WriteLine($"Duzo powiadomień: {powiadomienia.pobierzLiczbe()}");
-        
+
     }
 
     public void ustawNastepne(Lancuch c)

@@ -4,6 +4,8 @@
 
 using System;
 
+namespace Command;
+
 public interface IPolecenie
 {
     public void wykonaj();

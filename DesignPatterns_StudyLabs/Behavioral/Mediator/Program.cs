@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
+namespace Mediator;
 public interface IMediator
 {
     void DodajUzytkownika(IUzytkownik uzytkownik);

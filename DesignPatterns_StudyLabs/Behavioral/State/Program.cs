@@ -1,5 +1,7 @@
 ﻿using System;
 
+namespace State;
+
 interface Stan
 {
     void alert();

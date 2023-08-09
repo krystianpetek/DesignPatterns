@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+namespace Memento;
+
 class Zycie
 {
     private String czas;

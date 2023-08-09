@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
 
+namespace TemplateMethod;
+
 abstract class ZamowienieTemplatka
 {
 
