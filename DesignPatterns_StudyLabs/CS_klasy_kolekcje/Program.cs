@@ -2,143 +2,142 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CS_klasy_kolekcje
+namespace CS_klasy_kolekcje;
+
+class Program
 {
-    class Program
+    static List<string> lista = new List<string>();
+    static void Main(string[] args)
     {
-        static List<string> lista = new List<string>();
-        static void Main(string[] args)
-        {
-            Cat cat = new Cat();
-            Dog dog = new Dog();
-            Pig pig = new Pig();
+        Cat cat = new Cat();
+        Dog dog = new Dog();
+        Pig pig = new Pig();
 
-            Console.WriteLine(suma(5, 4));
-            helloWorld();
+        Console.WriteLine(suma(5, 4));
+        helloWorld();
 
-            Generator x = new Generator();
+        Generator x = new Generator();
 
-            PierwszaLista(x);
+        PierwszaLista(x);
 
-            int dlugoscNajkrotsza, index;
-            DrugaLista(x, out dlugoscNajkrotsza, out index);
-            TrzeciaLista(x, out dlugoscNajkrotsza, out index);
+        int dlugoscNajkrotsza, index;
+        DrugaLista(x, out dlugoscNajkrotsza, out index);
+        TrzeciaLista(x, out dlugoscNajkrotsza, out index);
 
-        }
-
-        private static void TrzeciaLista(Generator x, out int dlugoscNajkrotsza, out int index)
-        {
-            lista.Clear();
-            for (int j = 0; j < 100; j++)
-                lista.Add(x.GenerujStringi());
-            dlugoscNajkrotsza = lista[0].Length;
-            index = 0;
-            for (int j = 0; j < lista.Count; j++)
-                if (dlugoscNajkrotsza > lista[j].Length)
-                {
-                    dlugoscNajkrotsza = lista[j].Length;
-                    index = j;
-                }
-            Console.WriteLine($"index: {index}, wartość: {lista[index]}");
-        }
-
-        private static void DrugaLista(Generator x, out int dlugoscNajkrotsza, out int index)
-        {
-            lista.Clear();
-            for (int j = 0; j < 100; j++)
-                lista.Add(x.GenerujStringi());
-            dlugoscNajkrotsza = lista[0].Length;
-            index = 0;
-            for (int j = 0; j < lista.Count; j++)
-                if (dlugoscNajkrotsza > lista[j].Length)
-                {
-                    dlugoscNajkrotsza = lista[j].Length;
-                    index = j;
-                }
-            Console.WriteLine($"dlugość: {dlugoscNajkrotsza}, wartość: {lista[index]}");
-        }
-
-        private static void PierwszaLista(Generator x)
-        {
-            for (int j = 0; j < 100; j++)
-                lista.Add(x.GenerujStringi());
-            var find = lista.Find(x => x.Length > 5);
-            Console.WriteLine($"index: {lista.IndexOf(find)} wartość: {find}");
-        }
-
-        public static void helloWorld() => Console.WriteLine("hello world");
-        public static int suma(int a, int b) => a + b; // funkcja lambda
     }
 
-    public abstract class Animal
+    private static void TrzeciaLista(Generator x, out int dlugoscNajkrotsza, out int index)
     {
-        protected string name { get; set; }
-        int _age { get; set; }
-        int age
-        {
-            get { return _age; }
-            set
+        lista.Clear();
+        for (int j = 0; j < 100; j++)
+            lista.Add(x.GenerujStringi());
+        dlugoscNajkrotsza = lista[0].Length;
+        index = 0;
+        for (int j = 0; j < lista.Count; j++)
+            if (dlugoscNajkrotsza > lista[j].Length)
             {
-                if (value >= 2 || value <= 15)
-                    _age = value;
+                dlugoscNajkrotsza = lista[j].Length;
+                index = j;
             }
-        }
-        internal string sound { get; set; }
-        public virtual void makeSound() => Console.WriteLine(sound);
+        Console.WriteLine($"index: {index}, wartość: {lista[index]}");
     }
 
-    public class Cat : Animal
+    private static void DrugaLista(Generator x, out int dlugoscNajkrotsza, out int index)
     {
-    }
-
-    public class Dog : Animal
-    {
-        public override void makeSound()
-        {
-            Console.WriteLine("nie szczekam");
-        }
-    }
-
-    public class Pig : Animal
-    {
-    }
-
-    public class Generator
-    {
-        public Generator()
-        {
-            Random rand = new Random();
-            _random = rand;
-        }
-        private char c;
-        private Random _random;
-        private int GenerujDlugosc => _random.Next(3, 10);
-        private char wygenerowanyZnak => GenerujZnak();
-        private int GenerujRodzaj() => _random.Next(0, 3);
-        private char GenerujZnak()
-        {
-            switch (GenerujRodzaj())
+        lista.Clear();
+        for (int j = 0; j < 100; j++)
+            lista.Add(x.GenerujStringi());
+        dlugoscNajkrotsza = lista[0].Length;
+        index = 0;
+        for (int j = 0; j < lista.Count; j++)
+            if (dlugoscNajkrotsza > lista[j].Length)
             {
-                case 0: // cyfry
-                    c = (char)_random.Next(48, 58);
-                    break;
-                case 1: // duzeCyfry
-                    c = (char)_random.Next(65, 91);
-                    break;
-                case 2: // maleCyfry
-                    c = (char)_random.Next(97, 123);
-                    break;
+                dlugoscNajkrotsza = lista[j].Length;
+                index = j;
             }
-            return c;
-        }
-        public string GenerujStringi()
+        Console.WriteLine($"dlugość: {dlugoscNajkrotsza}, wartość: {lista[index]}");
+    }
+
+    private static void PierwszaLista(Generator x)
+    {
+        for (int j = 0; j < 100; j++)
+            lista.Add(x.GenerujStringi());
+        var find = lista.Find(x => x.Length > 5);
+        Console.WriteLine($"index: {lista.IndexOf(find)} wartość: {find}");
+    }
+
+    public static void helloWorld() => Console.WriteLine("hello world");
+    public static int suma(int a, int b) => a + b; // funkcja lambda
+}
+
+public abstract class Animal
+{
+    protected string name { get; set; }
+    int _age { get; set; }
+    int age
+    {
+        get { return _age; }
+        set
         {
-            StringBuilder slowo = new StringBuilder();
-            for (int i = 0; i < GenerujDlugosc; i++)
-            {
-                slowo.Append(wygenerowanyZnak);
-            }   
-            return slowo.ToString();
+            if (value >= 2 || value <= 15)
+                _age = value;
         }
+    }
+    internal string sound { get; set; }
+    public virtual void makeSound() => Console.WriteLine(sound);
+}
+
+public class Cat : Animal
+{
+}
+
+public class Dog : Animal
+{
+    public override void makeSound()
+    {
+        Console.WriteLine("nie szczekam");
+    }
+}
+
+public class Pig : Animal
+{
+}
+
+public class Generator
+{
+    public Generator()
+    {
+        Random rand = new Random();
+        _random = rand;
+    }
+    private char c;
+    private Random _random;
+    private int GenerujDlugosc => _random.Next(3, 10);
+    private char wygenerowanyZnak => GenerujZnak();
+    private int GenerujRodzaj() => _random.Next(0, 3);
+    private char GenerujZnak()
+    {
+        switch (GenerujRodzaj())
+        {
+            case 0: // cyfry
+                c = (char)_random.Next(48, 58);
+                break;
+            case 1: // duzeCyfry
+                c = (char)_random.Next(65, 91);
+                break;
+            case 2: // maleCyfry
+                c = (char)_random.Next(97, 123);
+                break;
+        }
+        return c;
+    }
+    public string GenerujStringi()
+    {
+        StringBuilder slowo = new StringBuilder();
+        for (int i = 0; i < GenerujDlugosc; i++)
+        {
+            slowo.Append(wygenerowanyZnak);
+        }   
+        return slowo.ToString();
     }
 }

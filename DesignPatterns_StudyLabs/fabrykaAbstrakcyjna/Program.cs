@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
 
+namespace AbstractFactory;
+
 interface ILitery
 {
     public string ShowAlfa();
