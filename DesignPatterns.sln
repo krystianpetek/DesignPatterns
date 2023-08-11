@@ -3,107 +3,103 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KolkoKrzyzyk", "DesignPatterns_StudyLabs\KolkoKrzyzyk\KolkoKrzyzyk.csproj", "{25963FA8-7622-488D-B83C-51EBBAAAF501}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KolkoKrzyzyk", "DesignPatterns\KolkoKrzyzyk\KolkoKrzyzyk.csproj", "{25963FA8-7622-488D-B83C-51EBBAAAF501}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefaktoryzacjaKolkoKrzyzyk", "DesignPatterns_StudyLabs\RefaktoryzacjaKolkoKrzyzyk\RefaktoryzacjaKolkoKrzyzyk.csproj", "{BDA2988F-367F-441C-94A8-06B1E29C85DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefaktoryzacjaKolkoKrzyzyk", "DesignPatterns\RefaktoryzacjaKolkoKrzyzyk\RefaktoryzacjaKolkoKrzyzyk.csproj", "{BDA2988F-367F-441C-94A8-06B1E29C85DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "DesignPatterns_StudyLabs\Creational\Builder\Builder.csproj", "{79D8637A-87DA-4E62-8669-EBF92552E009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "DesignPatterns\Creational\Builder\Builder.csproj", "{79D8637A-87DA-4E62-8669-EBF92552E009}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype", "DesignPatterns_StudyLabs\Creational\Prototype\Prototype.csproj", "{EE3BE047-E3A8-4045-A78F-95E81AF3D6BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype", "DesignPatterns\Creational\Prototype\Prototype.csproj", "{EE3BE047-E3A8-4045-A78F-95E81AF3D6BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory", "DesignPatterns_StudyLabs\fabrykaAbstrakcyjna\AbstractFactory.csproj", "{A5759127-EA82-4875-836C-69896DF44D3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory", "DesignPatterns\Creational\AbstractFactory\AbstractFactory.csproj", "{A5759127-EA82-4875-836C-69896DF44D3D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "DesignPatterns_StudyLabs\Structural\Adapter\Adapter.csproj", "{381FBDF5-3D3F-4B52-8325-38D86AC46D74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "DesignPatterns\Structural\Adapter\Adapter.csproj", "{381FBDF5-3D3F-4B52-8325-38D86AC46D74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cwiczeniaExtra", "DesignPatterns_StudyLabs\cwiczeniaExtra\cwiczeniaExtra.csproj", "{D8BB6AC0-F5DD-41E3-9EBD-0EBE3CF1A1BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cwiczeniaExtra", "DesignPatterns\cwiczeniaExtra\cwiczeniaExtra.csproj", "{D8BB6AC0-F5DD-41E3-9EBD-0EBE3CF1A1BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade", "DesignPatterns_StudyLabs\Structural\Facade\Facade.csproj", "{1A870D57-E05B-4C18-A873-2B69C585A226}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade", "DesignPatterns\Structural\Facade\Facade.csproj", "{1A870D57-E05B-4C18-A873-2B69C585A226}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "DesignPatterns_StudyLabs\Structural\Decorator\Decorator.csproj", "{77904CA9-8BE8-42D5-9CED-348203AEFBD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "DesignPatterns\Structural\Decorator\Decorator.csproj", "{77904CA9-8BE8-42D5-9CED-348203AEFBD5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Composite", "DesignPatterns_StudyLabs\Structural\Composite\Composite.csproj", "{E4079AC5-A3CA-4254-8713-44788908D7A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Composite", "DesignPatterns\Structural\Composite\Composite.csproj", "{E4079AC5-A3CA-4254-8713-44788908D7A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "DesignPatterns_StudyLabs\Structural\Bridge\Bridge.csproj", "{888C607B-5D05-4425-83DD-B03F642DC3C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "DesignPatterns\Structural\Bridge\Bridge.csproj", "{888C607B-5D05-4425-83DD-B03F642DC3C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy", "DesignPatterns_StudyLabs\Structural\Proxy\Proxy.csproj", "{D9813586-A2DF-412F-952A-8537F2671A47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy", "DesignPatterns\Structural\Proxy\Proxy.csproj", "{D9813586-A2DF-412F-952A-8537F2671A47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_klasy_kolekcje", "DesignPatterns_StudyLabs\CS_klasy_kolekcje\CS_klasy_kolekcje.csproj", "{005D6E55-3118-4F02-B3A5-2989A2080664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_klasy_kolekcje", "DesignPatterns\CS_klasy_kolekcje\CS_klasy_kolekcje.csproj", "{005D6E55-3118-4F02-B3A5-2989A2080664}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Observer", "DesignPatterns_StudyLabs\Behavioral\Observer\Observer.csproj", "{8AED8F85-25EE-4DE4-9BDC-EF3DCFF5709A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Observer", "DesignPatterns\Behavioral\Observer\Observer.csproj", "{8AED8F85-25EE-4DE4-9BDC-EF3DCFF5709A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsibility", "DesignPatterns_StudyLabs\Behavioral\ChainOfResponsibility\ChainOfResponsibility.csproj", "{EFD4086C-69D3-47BA-9605-4C83CCB4513D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsibility", "DesignPatterns\Behavioral\ChainOfResponsibility\ChainOfResponsibility.csproj", "{EFD4086C-69D3-47BA-9605-4C83CCB4513D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Memento", "DesignPatterns_StudyLabs\Behavioral\Memento\Memento.csproj", "{7A6C25FD-B6FA-4716-B260-9FE901DA4191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Memento", "DesignPatterns\Behavioral\Memento\Memento.csproj", "{7A6C25FD-B6FA-4716-B260-9FE901DA4191}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Command", "DesignPatterns_StudyLabs\Behavioral\Command\Command.csproj", "{BA0EE073-76BB-4F27-9BD3-DEF007B51BDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Command", "DesignPatterns\Behavioral\Command\Command.csproj", "{BA0EE073-76BB-4F27-9BD3-DEF007B51BDB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator", "DesignPatterns_StudyLabs\Behavioral\Mediator\Mediator.csproj", "{0AF1EB82-C43B-4AB1-AAB0-1B2AB238DECF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator", "DesignPatterns\Behavioral\Mediator\Mediator.csproj", "{0AF1EB82-C43B-4AB1-AAB0-1B2AB238DECF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "State", "DesignPatterns_StudyLabs\Behavioral\State\State.csproj", "{17F3B8B3-4947-4F03-93D1-214630B4BC3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "State", "DesignPatterns\Behavioral\State\State.csproj", "{17F3B8B3-4947-4F03-93D1-214630B4BC3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visitor", "DesignPatterns_StudyLabs\Behavioral\Visitor\Visitor.csproj", "{CBCFCE96-2F26-48AB-B588-0E2F8570633F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visitor", "DesignPatterns\Behavioral\Visitor\Visitor.csproj", "{CBCFCE96-2F26-48AB-B588-0E2F8570633F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy", "DesignPatterns_StudyLabs\Behavioral\Strategy\Strategy.csproj", "{C5C18E9F-FC62-410D-8571-33414B4EC917}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy", "DesignPatterns\Behavioral\Strategy\Strategy.csproj", "{C5C18E9F-FC62-410D-8571-33414B4EC917}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsibility.Two", "DesignPatterns_StudyLabs\Behavioral\ChainOfResponsibility.Two\ChainOfResponsibility.Two.csproj", "{EF97942D-E122-4D96-B32C-0AFD225836E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsibility.Two", "DesignPatterns\Behavioral\ChainOfResponsibility.Two\ChainOfResponsibility.Two.csproj", "{EF97942D-E122-4D96-B32C-0AFD225836E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeRefactoring", "DesignPatterns_StudyLabs\TicTacToeRefactoring\TicTacToeRefactoring.csproj", "{81D89DFC-1C60-4690-B9B5-2EF6C94FADAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeRefactoring", "DesignPatterns\TicTacToeRefactoring\TicTacToeRefactoring.csproj", "{81D89DFC-1C60-4690-B9B5-2EF6C94FADAA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMethod", "DesignPatterns_StudyLabs\Behavioral\TemplateMethod\TemplateMethod.csproj", "{2274FAE0-0AF8-4914-8190-600CE33B46CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMethod", "DesignPatterns\Behavioral\TemplateMethod\TemplateMethod.csproj", "{2274FAE0-0AF8-4914-8190-600CE33B46CE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interpreter", "DesignPatterns_StudyLabs\Behavioral\Interpreter\Interpreter.csproj", "{8DC2A7C8-BD8B-48F2-88E3-B0701553C853}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interpreter", "DesignPatterns\Behavioral\Interpreter\Interpreter.csproj", "{8DC2A7C8-BD8B-48F2-88E3-B0701553C853}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns_StudyLabs", "DesignPatterns_StudyLabs", "{6270B260-7DD4-44C2-BE84-DFBC1D514436}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns", "DesignPatterns", "{6270B260-7DD4-44C2-BE84-DFBC1D514436}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RELACJE", "DesignPatterns_OwnPractice\RELACJE\RELACJE.csproj", "{866E2969-B10C-4B4A-B0E0-217708F3B077}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RELACJE", "RELACJE\RELACJE.csproj", "{866E2969-B10C-4B4A-B0E0-217708F3B077}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polimorfizm", "DesignPatterns_OwnPractice\Polimorfizm\Polimorfizm.csproj", "{8D0EE72C-51A0-42BE-8E7D-E6C191427A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polimorfizm", "Polimorfizm\Polimorfizm.csproj", "{8D0EE72C-51A0-42BE-8E7D-E6C191427A0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KBudowniczy", "DesignPatterns_OwnPractice\Budowniczy\KBudowniczy.csproj", "{987AD6D8-F4D1-4351-8803-2705CDBB9ACB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder.Two", "DesignPatterns\Creational\Builder.Two\Builder.Two.csproj", "{987AD6D8-F4D1-4351-8803-2705CDBB9ACB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KProstaFabryka", "DesignPatterns_OwnPractice\ProstaFabryka\KProstaFabryka.csproj", "{AB2697EB-3022-4F9C-B100-F34FB7E67B75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryMethod.Two", "DesignPatterns\Creational\FactoryMethod.Two\FactoryMethod.Two.csproj", "{AB2697EB-3022-4F9C-B100-F34FB7E67B75}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KMetodaWytworcza", "DesignPatterns_OwnPractice\MetodaWytworcza\KMetodaWytworcza.csproj", "{BC78F393-1607-436C-B4BD-259F52523528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryMethod", "DesignPatterns\Creational\FactoryMethod\FactoryMethod.csproj", "{BC78F393-1607-436C-B4BD-259F52523528}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KFabrykaAbstrakcyjna", "DesignPatterns_OwnPractice\FabrykaAbstrakcyjna\KFabrykaAbstrakcyjna.csproj", "{2C693D24-13BD-45C5-BF9A-CCBCE9999594}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory.Two", "DesignPatterns\Creational\AbstractFactory.Two\AbstractFactory.Two.csproj", "{2C693D24-13BD-45C5-BF9A-CCBCE9999594}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KPrototyp", "DesignPatterns_OwnPractice\Prototyp\KPrototyp.csproj", "{9D19A2C3-9335-4F20-86F5-CF24740683C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype.Two", "DesignPatterns\Creational\Prototype.Two\Prototype.Two.csproj", "{9D19A2C3-9335-4F20-86F5-CF24740683C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSingleton", "DesignPatterns_OwnPractice\Singleton\KSingleton.csproj", "{6860E67F-8113-48B9-A5C1-702E1CBF11D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Singleton", "DesignPatterns\Creational\Singleton\Singleton.csproj", "{6860E67F-8113-48B9-A5C1-702E1CBF11D4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter.Two", "DesignPatterns_StudyLabs\Structural\Adapter.Two\Adapter.Two.csproj", "{0F1DEC0B-C36B-4E7E-BFF9-EE244340C2DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter.Two", "DesignPatterns\Structural\Adapter.Two\Adapter.Two.csproj", "{0F1DEC0B-C36B-4E7E-BFF9-EE244340C2DA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns_OwnPractice", "DesignPatterns_OwnPractice", "{4DBB749C-5754-4957-BDDE-7348C08F23DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator.Two", "DesignPatterns\Structural\Decorator.Two\Decorator.Two.csproj", "{80E2DDF5-4BAA-4FF1-A276-6E0E67C5B113}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator.Two", "DesignPatterns_StudyLabs\Structural\Decorator.Two\Decorator.Two.csproj", "{80E2DDF5-4BAA-4FF1-A276-6E0E67C5B113}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy.Two", "DesignPatterns\Structural\Proxy.Two\Proxy.Two.csproj", "{13AB0AAC-7371-44D1-9021-EECE7216AC44}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy.Two", "DesignPatterns_StudyLabs\Structural\Proxy.Two\Proxy.Two.csproj", "{13AB0AAC-7371-44D1-9021-EECE7216AC44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge.Two", "DesignPatterns\Structural\Bridge.Two\Bridge.Two.csproj", "{B0A5401D-3888-44BD-A9A7-212A782F51EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge.Two", "DesignPatterns_StudyLabs\Structural\Bridge.Two\Bridge.Two.csproj", "{B0A5401D-3888-44BD-A9A7-212A782F51EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flyweight", "DesignPatterns\Structural\Flyweight\Flyweight.csproj", "{2AC9D5AE-C4F4-4534-8F34-FC0D006E5868}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flyweight", "DesignPatterns_StudyLabs\Structural\Flyweight\Flyweight.csproj", "{2AC9D5AE-C4F4-4534-8F34-FC0D006E5868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade.Two", "DesignPatterns\Structural\Facade.Two\Facade.Two.csproj", "{91BE65B3-2856-48F0-A96A-29EA306514C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade.Two", "DesignPatterns_StudyLabs\Structural\Facade.Two\Facade.Two.csproj", "{91BE65B3-2856-48F0-A96A-29EA306514C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsibility.Three", "DesignPatterns\Behavioral\ChainOfResponsibility.Three\ChainOfResponsibility.Three.csproj", "{DC198102-3347-4D17-B13E-984BA49B3948}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZLancuchZobowiazan", "DesignPatterns_OwnPractice\CZLancuchZobowiazan\CZLancuchZobowiazan.csproj", "{DC198102-3347-4D17-B13E-984BA49B3948}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator.Two", "DesignPatterns\Behavioral\Mediator.Two\Mediator.Two.csproj", "{E09D4866-EECE-498C-AB33-93378A913F1B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZMediator", "DesignPatterns_OwnPractice\CZMediator\CZMediator.csproj", "{E09D4866-EECE-498C-AB33-93378A913F1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Observer.Two", "DesignPatterns\Behavioral\Observer.Two\Observer.Two.csproj", "{09995241-2993-40BF-A310-C28F94333E72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZObserwator", "DesignPatterns_OwnPractice\CZObserwator\CZObserwator.csproj", "{09995241-2993-40BF-A310-C28F94333E72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMethod.Two", "DesignPatterns\Behavioral\TemplateMethod.Two\TemplateMethod.Two.csproj", "{059851D4-0918-4ED9-BC31-45BAA2B23E43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZMetodaSzablonowa", "DesignPatterns_OwnPractice\CZMetodaSzablonowa\CZMetodaSzablonowa.csproj", "{059851D4-0918-4ED9-BC31-45BAA2B23E43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy.Two", "DesignPatterns\Behavioral\Strategy.Two\Strategy.Two.csproj", "{AE5C87CE-B488-4FCB-9E3D-829969332837}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZStrategia", "DesignPatterns_OwnPractice\CZStrategia\CZStrategia.csproj", "{AE5C87CE-B488-4FCB-9E3D-829969332837}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "State.Two", "DesignPatterns\Behavioral\State.Two\State.Two.csproj", "{CF56679B-6BDA-4DAC-A5B9-1D78FA22FDCE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZStan", "DesignPatterns_OwnPractice\CZStan\CZStan.csproj", "{CF56679B-6BDA-4DAC-A5B9-1D78FA22FDCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interpreter.Two", "DesignPatterns\Behavioral\Interpreter.Two\Interpreter.Two.csproj", "{8BBA4A70-77B9-48BB-97B8-CA0F2F683529}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZInterpreter", "DesignPatterns_OwnPractice\CZInterpreter\CZInterpreter.csproj", "{8BBA4A70-77B9-48BB-97B8-CA0F2F683529}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iterator", "DesignPatterns\Behavioral\Iterator\Iterator.csproj", "{8F963D53-8E06-4726-835B-123CDFB48EF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZIterator", "DesignPatterns_OwnPractice\CZIterator\CZIterator.csproj", "{8F963D53-8E06-4726-835B-123CDFB48EF4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZPamiatka", "DesignPatterns_OwnPractice\CZPamiatka\CZPamiatka.csproj", "{B1D3F197-5EB6-460F-8E10-6B170862DF2F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CZOdwiedzajacy", "DesignPatterns_OwnPractice\CZOdwiedzajacy\CZOdwiedzajacy.csproj", "{48384841-3116-4445-AA73-08A81F443CE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Memento.Two", "DesignPatterns\Behavioral\Memento.Two\Memento.Two.csproj", "{B1D3F197-5EB6-460F-8E10-6B170862DF2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns_InWork", "DesignPatterns_InWork", "{3A1B0204-C02D-4208-BDDA-145D649302DC}"
 EndProject
@@ -315,10 +311,6 @@ Global
 		{B1D3F197-5EB6-460F-8E10-6B170862DF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1D3F197-5EB6-460F-8E10-6B170862DF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1D3F197-5EB6-460F-8E10-6B170862DF2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48384841-3116-4445-AA73-08A81F443CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48384841-3116-4445-AA73-08A81F443CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48384841-3116-4445-AA73-08A81F443CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48384841-3116-4445-AA73-08A81F443CE5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED9737EF-4F26-4BA6-BA4F-7141F8627C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED9737EF-4F26-4BA6-BA4F-7141F8627C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED9737EF-4F26-4BA6-BA4F-7141F8627C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -357,30 +349,29 @@ Global
 		{81D89DFC-1C60-4690-B9B5-2EF6C94FADAA} = {6270B260-7DD4-44C2-BE84-DFBC1D514436}
 		{2274FAE0-0AF8-4914-8190-600CE33B46CE} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
 		{8DC2A7C8-BD8B-48F2-88E3-B0701553C853} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
-		{866E2969-B10C-4B4A-B0E0-217708F3B077} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{8D0EE72C-51A0-42BE-8E7D-E6C191427A0A} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{987AD6D8-F4D1-4351-8803-2705CDBB9ACB} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{AB2697EB-3022-4F9C-B100-F34FB7E67B75} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{BC78F393-1607-436C-B4BD-259F52523528} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{2C693D24-13BD-45C5-BF9A-CCBCE9999594} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{9D19A2C3-9335-4F20-86F5-CF24740683C7} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{6860E67F-8113-48B9-A5C1-702E1CBF11D4} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
+		{866E2969-B10C-4B4A-B0E0-217708F3B077} = {6270B260-7DD4-44C2-BE84-DFBC1D514436}
+		{8D0EE72C-51A0-42BE-8E7D-E6C191427A0A} = {6270B260-7DD4-44C2-BE84-DFBC1D514436}
+		{987AD6D8-F4D1-4351-8803-2705CDBB9ACB} = {783E3508-59F5-45A0-A73C-65E06B429BA2}
+		{AB2697EB-3022-4F9C-B100-F34FB7E67B75} = {783E3508-59F5-45A0-A73C-65E06B429BA2}
+		{BC78F393-1607-436C-B4BD-259F52523528} = {783E3508-59F5-45A0-A73C-65E06B429BA2}
+		{2C693D24-13BD-45C5-BF9A-CCBCE9999594} = {783E3508-59F5-45A0-A73C-65E06B429BA2}
+		{9D19A2C3-9335-4F20-86F5-CF24740683C7} = {783E3508-59F5-45A0-A73C-65E06B429BA2}
+		{6860E67F-8113-48B9-A5C1-702E1CBF11D4} = {783E3508-59F5-45A0-A73C-65E06B429BA2}
 		{0F1DEC0B-C36B-4E7E-BFF9-EE244340C2DA} = {2295B6E9-F7DA-4726-91E4-6F93845B8298}
 		{80E2DDF5-4BAA-4FF1-A276-6E0E67C5B113} = {2295B6E9-F7DA-4726-91E4-6F93845B8298}
 		{13AB0AAC-7371-44D1-9021-EECE7216AC44} = {2295B6E9-F7DA-4726-91E4-6F93845B8298}
 		{B0A5401D-3888-44BD-A9A7-212A782F51EA} = {2295B6E9-F7DA-4726-91E4-6F93845B8298}
 		{2AC9D5AE-C4F4-4534-8F34-FC0D006E5868} = {2295B6E9-F7DA-4726-91E4-6F93845B8298}
 		{91BE65B3-2856-48F0-A96A-29EA306514C7} = {2295B6E9-F7DA-4726-91E4-6F93845B8298}
-		{DC198102-3347-4D17-B13E-984BA49B3948} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{E09D4866-EECE-498C-AB33-93378A913F1B} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{09995241-2993-40BF-A310-C28F94333E72} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{059851D4-0918-4ED9-BC31-45BAA2B23E43} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{AE5C87CE-B488-4FCB-9E3D-829969332837} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{CF56679B-6BDA-4DAC-A5B9-1D78FA22FDCE} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{8BBA4A70-77B9-48BB-97B8-CA0F2F683529} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{8F963D53-8E06-4726-835B-123CDFB48EF4} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{B1D3F197-5EB6-460F-8E10-6B170862DF2F} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
-		{48384841-3116-4445-AA73-08A81F443CE5} = {4DBB749C-5754-4957-BDDE-7348C08F23DA}
+		{DC198102-3347-4D17-B13E-984BA49B3948} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
+		{E09D4866-EECE-498C-AB33-93378A913F1B} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
+		{09995241-2993-40BF-A310-C28F94333E72} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
+		{059851D4-0918-4ED9-BC31-45BAA2B23E43} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
+		{AE5C87CE-B488-4FCB-9E3D-829969332837} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
+		{CF56679B-6BDA-4DAC-A5B9-1D78FA22FDCE} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
+		{8BBA4A70-77B9-48BB-97B8-CA0F2F683529} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
+		{8F963D53-8E06-4726-835B-123CDFB48EF4} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
+		{B1D3F197-5EB6-460F-8E10-6B170862DF2F} = {748338DA-E2A4-4AC8-8BF2-25EE877150F2}
 		{ED9737EF-4F26-4BA6-BA4F-7141F8627C36} = {3A1B0204-C02D-4208-BDDA-145D649302DC}
 		{B0F80E15-87A5-485A-89CC-68EA34F7085E} = {3A1B0204-C02D-4208-BDDA-145D649302DC}
 		{2295B6E9-F7DA-4726-91E4-6F93845B8298} = {6270B260-7DD4-44C2-BE84-DFBC1D514436}
