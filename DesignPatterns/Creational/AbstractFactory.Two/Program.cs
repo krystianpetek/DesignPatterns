@@ -1,66 +1,20 @@
 ﻿using System;
+using AbstractFactory.Two.VehicleFactory.Fiat.Factory;
+using AbstractFactory.Two.VehicleFactory.Ford.Factory;
 
 namespace AbstractFactory.Two;
 
-internal class Program
+public static class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        ZakupSamochodu zakup = new ZakupSamochodu(new FabrykaFiata());
-        zakup.GenerujWynik();
-        Console.WriteLine(zakup.osobowy);
-        Console.WriteLine(zakup.dostawczy);
-    }
-}
-public interface IFabrykaAbstrakcyjna
-{
-    public IOsobowy StworzOsobowy();
-    public IDostawczy StworzDostaczy();
-}
-public interface IOsobowy { }
-public class FordMondeo : IOsobowy { }
-public class FiatTipo : IOsobowy { }
+        VehicleSystem vehicleSystem = new VehicleSystem(new FiatFactory());
+        vehicleSystem.DisplayCar();
+        vehicleSystem.DisplayTruck();
+        Console.WriteLine();
 
-public interface IDostawczy { }
-public class FordTransit : IDostawczy { }
-public class FiatDucato : IDostawczy { }
-
-public class FabrykaForda : IFabrykaAbstrakcyjna
-{
-    public IDostawczy StworzDostaczy()
-    {
-        return new FordTransit();
-    }
-    public IOsobowy StworzOsobowy()
-    {
-        return new FordMondeo();
-    }
-}
-public class FabrykaFiata : IFabrykaAbstrakcyjna
-{
-    public IDostawczy StworzDostaczy()
-    {
-        return new FiatDucato();
-    }
-    public IOsobowy StworzOsobowy()
-    {
-        return new FiatTipo();
-    }
-}
-
-public class ZakupSamochodu
-{
-    private IFabrykaAbstrakcyjna wyborMarki;
-    public ZakupSamochodu(IFabrykaAbstrakcyjna marka)
-    {
-        wyborMarki = marka;
-    }
-    public IOsobowy osobowy;
-    public IDostawczy dostawczy;
-
-    public void GenerujWynik()
-    {
-        osobowy = wyborMarki.StworzOsobowy();
-        dostawczy = wyborMarki.StworzDostaczy();
+        vehicleSystem = new VehicleSystem(new FordFactory());
+        vehicleSystem.DisplayCar();
+        vehicleSystem.DisplayTruck();
     }
 }
