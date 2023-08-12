@@ -1,4 +1,4 @@
-﻿namespace flyweight_cars;
+﻿namespace flyweight;
 
 static class SharedCarFactory
 {
@@ -9,9 +9,9 @@ static class SharedCarFactory
         if (!_cars.ContainsKey(key))
         {
             string[] parts = key.Split('_');
-            if (parts.Length != 3) 
+            if (parts.Length != 3)
                 throw new ArgumentException("Invalid key");
-            
+
             _cars[key] = new SharedCarInfo(parts[0], parts[1], parts[2]);
         }
         return _cars[key];

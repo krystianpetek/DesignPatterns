@@ -1,37 +1,17 @@
-﻿using System;
+﻿using FactoryMethod.Two.Contracts;
+using FactoryMethod.Two.Factories;
 
 namespace FactoryMethod.Two;
 
-internal class Program
+public static class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        var x = new FabrykaSamochodow();
-        var gg = x.StworzSamochod(RodzajSamochodu.Osobowy);
-        Console.WriteLine(gg);
-    }
-}
-public enum RodzajSamochodu
-{
-    Osobowy, Terenowy, Ciezarowy
-}
-public interface ISamochod { }
-public class Osobowy : ISamochod { }
-public class Terenowy : ISamochod { }
-public class Ciezarowy : ISamochod { }
-public class FabrykaSamochodow
-{
-    public ISamochod StworzSamochod(RodzajSamochodu rodzaj)
-    {
-        switch (rodzaj)
-        {
-            case RodzajSamochodu.Osobowy:
-                return new Osobowy();
-            case RodzajSamochodu.Terenowy:
-                return new Terenowy();
-            case RodzajSamochodu.Ciezarowy:
-                return new Ciezarowy();
-            default: throw new ArgumentException();
-        }
+        VehicleFactory factory = new VehicleFactory();
+        IVehicle vehicle = factory.CreateVehicle(VehicleType.Car);
+        vehicle.Display();
+
+        vehicle = factory.CreateVehicle(VehicleType.OffroadCar);
+        vehicle.Display();
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace flyweight_cars;
+﻿namespace flyweight;
 
 public class Car
 {
@@ -11,9 +11,9 @@ public class Car
     {
         string nameTemplate = GetNameTemplate(make, model, color);
         _sharedCarInfo = SharedCarFactory.GetCar(nameTemplate);
-        this._owner = owner;
-        this._plate = plate;
-        this._vinNumber = vin;
+        _owner = owner;
+        _plate = plate;
+        _vinNumber = vin;
     }
 
     public string Make => _sharedCarInfo.Make;

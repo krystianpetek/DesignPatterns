@@ -1,9 +1,9 @@
-﻿namespace flyweight_cars;
+﻿namespace flyweight;
 
 public static class Program
 {
     static void Main(string[] args)
-   {
+    {
         List<Car> cars = new List<Car>
         {
             new Car("Renault", "Clio", "Blue", "Name1", "ABC-sada123", "12dsada34567890"),
@@ -23,7 +23,7 @@ public static class Program
         {
             Console.WriteLine(car);
         }
-        
+
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine(SharedCarFactory.Count);
         Console.ResetColor();

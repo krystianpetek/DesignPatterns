@@ -1,4 +1,4 @@
-﻿namespace flyweight_cars;
+﻿namespace flyweight;
 
 class SharedCarInfo
 {
