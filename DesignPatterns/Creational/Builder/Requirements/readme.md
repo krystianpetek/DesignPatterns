@@ -1,3 +1,7 @@
+# Builder pattern
+
+## Requirement description
+
 Proszę napisać (dokończyć) aplikację produkującą komputery wykorzystując wzorzec budowniczy.
 
 Aplikacja powinna potrafić składać 3 gotowe zestawy komputerowe:
