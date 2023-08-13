@@ -18,7 +18,7 @@ public class ProfessionalComputerBuilder : ComputerBuilder
 
     public override void BuildMotherboard()
     {
-        Computer.MotherBoard = "Supermicro MBD X11DPH";
+        Computer.Motherboard = "Supermicro MBD X11DPH";
         Computer.Price += 2755.30;
     }
 
