@@ -2,6 +2,28 @@
 
 ## DesignPatterns_StudyLabs
 
+### Creational patterns
+
+#### 1. Abstract factory pattern
+
+![Abstract factory UML](DesignPatterns/Creational/AbstractFactory/Uml/abstract_factory.svg)
+
+#### 2. Builder pattern
+
+![Builder UML](DesignPatterns/Creational/Builder/Uml/builder.svg)
+
+#### 3. Factory method pattern
+
+![Factory method UML](DesignPatterns/Creational/FactoryMethod/Uml/factory_method.svg)
+
+#### 4. Prototype pattern
+
+![Prototype UML](DesignPatterns/Creational/Prototype/Uml/prototype.svg)
+
+#### 5. Singleton pattern
+
+![Singleton UML](DesignPatterns/Creational/Singleton/Uml/singleton.svg)
+
 ### Structural patterns
 
 #### 1. Adapter pattern
