@@ -1,5 +1,5 @@
 ﻿using Command.Contracts;
-using Command.Entities;
+using Command.Receiver;
 
 namespace Command.Commands;
 

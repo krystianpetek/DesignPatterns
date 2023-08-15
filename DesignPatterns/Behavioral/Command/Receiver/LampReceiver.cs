@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Command.Entities;
+namespace Command.Receiver;
 
 public class LampReceiver
 {

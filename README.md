@@ -53,3 +53,13 @@
 #### 7. Proxy pattern
 
 ![Proxy UML](DesignPatterns/Structural/Proxy/Uml/proxy.svg)
+
+### Behavioral patterns
+
+#### 1. Chain of responsibility pattern
+
+![Chain of responsibility UML](DesignPatterns/Behavioral/ChainOfResponsibility/Uml/chainofresponsibility.svg)
+
+#### 2. Command pattern
+
+![Command UML](DesignPatterns/Behavioral/Command/Uml/command.svg)

@@ -1,7 +1,7 @@
 ﻿using Command.Commands;
 using Command.Contracts;
-using Command.Entities;
 using Command.Invoker;
+using Command.Receiver;
 
 namespace Command;
 
