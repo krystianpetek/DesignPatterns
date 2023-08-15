@@ -58,7 +58,7 @@
 
 #### 1. Chain of responsibility pattern
 
-![Chain of responsibility UML](DesignPatterns/Behavioral/ChainOfResponsibility/Uml/chainofresponsibility.svg)
+![Chain of responsibility UML](DesignPatterns/Behavioral/ChainOfResponsibility/Uml/chainOfResponsibility.svg)
 
 #### 2. Command pattern
 
