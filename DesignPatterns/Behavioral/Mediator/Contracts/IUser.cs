@@ -1,0 +1,7 @@
+﻿namespace Mediator.Contracts;
+
+public interface IUser
+{
+    void SendMessage(string message);
+    void ReceiveMessage(string message);
+}
