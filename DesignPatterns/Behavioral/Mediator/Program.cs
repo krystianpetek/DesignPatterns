@@ -10,13 +10,13 @@ public static class Program
     {
         IMediator mediator = new ChatMediator();
 
-        IUser ania = new Klient(mediator, "Ania");
+        IUser ania = new Client(mediator, "Ania");
         mediator.AddUser(ania);
 
-        IUser nakamoto = new Dev(mediator, "Nakamoto");
+        IUser nakamoto = new Developer(mediator, "Nakamoto");
         mediator.AddUser(nakamoto);
 
-        IUser geohot = new Dev(mediator, "Geohot");
+        IUser geohot = new Developer(mediator, "Geohot");
         mediator.AddUser(geohot);
 
         ania.SendMessage("Prosze natychmiast wprowadzic poprawki na produkcje.");

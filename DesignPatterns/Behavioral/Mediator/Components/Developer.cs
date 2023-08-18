@@ -3,12 +3,12 @@ using Mediator.Contracts;
 
 namespace Mediator.Components;
 
-public class Dev : IUser
+public class Developer : IUser
 {
     private readonly IMediator _mediator;
     private readonly string _login;
 
-    public Dev(IMediator mediator, string login)
+    public Developer(IMediator mediator, string login)
     {
         _login = login;
         _mediator = mediator;
