@@ -1,24 +1,29 @@
 ﻿using System;
+using Iterator.Collection;
+using Iterator.Contracts;
 
-namespace Iterator
+namespace Iterator;
+
+public static class Program
 {
-    internal class Program
+    public static void Main()
     {
-        static void Main(string[] args)
+        WeeksCollection weeksCollection = new WeeksCollection();
+        IWeeksIterator iterator = weeksCollection.OnlyWeekDaysIterator();
+        Console.WriteLine("Only week days iterator");
+        while (iterator.MoveNext())
         {
-            Console.WriteLine("Hello World!");
-            // to do
+            Console.WriteLine(iterator.CurrentItem);
+        }
+
+        Console.WriteLine();
+
+        Console.WriteLine("All days iterator");
+        iterator = weeksCollection.WeeksIterator();
+        while (iterator.MoveNext())
+        {
+            Console.WriteLine(iterator.CurrentItem);
         }
     }
-    //public interface IIterator
-    //{
-    //    bool HasNext();
-    //    PozycjaMenu Next();
-    //}
-    //public interface
-    //public class Iterator : IIterator
-    //{
-
-    //}
-    // TODO
+    
 }
