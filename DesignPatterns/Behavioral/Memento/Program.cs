@@ -3,227 +3,60 @@ using System.Collections.Generic;
 
 namespace Memento;
 
-class Zycie
+class Life
 {
-    private String czas;
+    private string _time;
 
-    public void set(String czas)
+    public void SetTime(string time)
     {
-        Console.WriteLine($"Skok do roku: {czas}");
-        this.czas = czas;
-        
+        Console.WriteLine($"Skok do roku: {time}");
+        _time = time;   
     }
 
-    public Pamiatka zapiszPamiatke()
+    public Memento SaveMemento()
     {
-        Console.WriteLine("stan zapisany");
-        return new Pamiatka(czas);
+        Console.WriteLine("Saved memento");
+        return new Memento(_time);
     }
 
-    public void przywrocPamiatke(Pamiatka pamiatka)
+    public void RestoreMemento(Memento memento)
     {
-        czas = pamiatka.pobierzCzas();
+        _time = memento.GetTime();
         Console.Write($"Przywrócono rok: ");
-        Console.WriteLine(czas);
+        Console.WriteLine(_time);
     }
 
-    public class Pamiatka
+    public class Memento
     {
-        private String czas;
+        private readonly string _time;
 
-        public Pamiatka(String czas)
-        {
-            this.czas = czas;
-        }
-
-        public String pobierzCzas()
-        {
-            return czas;
-        }
+        public Memento(string time) => _time = time;
+        public string GetTime() => _time;
     }
 }
 
 
-class MainClass
+public static class Program
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-
         Console.WriteLine("Powrot do przyszlosci (Back to the Future)");
         Console.WriteLine();
 
-        List<Zycie.Pamiatka> zapisaneStany = new List<Zycie.Pamiatka>();
-        Zycie zycie = new Zycie();
+        List<Life.Memento> savedMementos = new List<Life.Memento>();
+        Life life = new Life();
 
-        zycie.set("1985");
-        zapisaneStany.Add(zycie.zapiszPamiatke());
-        zycie.set("1955");
-        zapisaneStany.Add(zycie.zapiszPamiatke());
-        zycie.set("2015");
-        zapisaneStany.Add(zycie.zapiszPamiatke());
-        zycie.set("1885");
+        life.SetTime("1985");
+        savedMementos.Add(life.SaveMemento());
+        life.SetTime("1955");
+        savedMementos.Add(life.SaveMemento());
+        life.SetTime("2015");
+        savedMementos.Add(life.SaveMemento());
+        life.SetTime("1885");
+        savedMementos.Add(life.SaveMemento());
 
-        zycie.przywrocPamiatke(zapisaneStany[0]);
+        life.RestoreMemento(savedMementos[0]);
+        life.RestoreMemento(savedMementos[3]);
 
     }
 }
-
-
-
-
-
-//using System;
-//using System.Collections.Generic;
-
-//class Zycie
-//{
-//    private String czas;
-
-//    public void set(String czas)
-//    {
-//        //
-//        //
-//    }
-
-//    public Pamiatka zapiszPamiatke()
-//    {
-//        //
-//        //
-//    }
-
-//    public void przywrocPamiatke(Pamiatka pamiatka)
-//    {
-//        // czas = ??
-//        //
-//        //
-//    }
-
-//    public class Pamiatka
-//    {
-//        private String czas;
-
-//        public Pamiatka(String czas)
-//        {
-//            //
-//            //
-//        }
-
-//        public String pobierzCzas()
-//        {
-//            //
-//            //
-//        }
-//    }
-//}
-
-
-//class MainClass
-//{
-//    public static void Main(string[] args)
-//    {
-
-//        Console.WriteLine("Powrot do przyszlosci (Back to the Future)");
-//        Console.WriteLine();
-
-//        List<Zycie.Pamiatka> zapisaneStany = new List<Zycie.Pamiatka>();
-//        Zycie zycie = new Zycie();
-
-//        zycie.set("1985");
-//        zapisaneStany.Add(zycie.zapiszPamiatke());
-//        zycie.set("1955");
-//        zapisaneStany.Add(zycie.zapiszPamiatke());
-//        zycie.set("2015");
-//        zapisaneStany.Add(zycie.zapiszPamiatke());
-//        zycie.set("1885");
-
-//        zycie.przywrocPamiatke(zapisaneStany[0]);
-
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//using System;
-//using System.Collections.Generic;
-
-//class Zycie
-//{
-//    Pamiatka pamiatka;
-//    private string czas;
-//    public string Czas { 
-//        get=> czas; 
-
-//        set
-//        {
-//            if (int.Parse(value) > 0)
-//            {
-//                czas = value;
-//                Console.WriteLine("Skok do roku: " + czas);
-//            }
-//        } 
-//    }
-//    public Pamiatka zapiszPamiatke()
-//    {
-//        Console.WriteLine("stan zapisany");
-//        return pamiatka = new Pamiatka(czas);
-//    }
-
-//    public void przywrocPamiatke(Pamiatka pamiatka)
-//    {
-//        Console.Write($"Przywrócono rok: ");
-//        czas = pamiatka.pobierzCzas();
-//        Console.WriteLine(czas);
-//    }
-//}
-
-//public class Pamiatka
-//{
-//    private string czas;
-
-//    public Pamiatka(string czas)
-//    {
-//        this.czas = czas;
-//    }
-
-//    public string pobierzCzas()
-//    {
-//        return czas;
-//    }
-//}
-
-
-//class MainClass
-//{
-//    public static void Main(string[] args)
-//    {
-
-//        Console.WriteLine("Powrot do przyszlosci (Back to the Future)");
-//        Console.WriteLine();
-
-//        List<Pamiatka> zapisaneStany = new List<Pamiatka>();
-//        Zycie zycie = new Zycie();
-
-//        zycie.Czas = "1985";
-//        zapisaneStany.Add(zycie.zapiszPamiatke());
-//        zycie.Czas = "1955";
-//        zapisaneStany.Add(zycie.zapiszPamiatke());
-//        zycie.Czas = "2015";
-//        zapisaneStany.Add(zycie.zapiszPamiatke());
-//        zycie.Czas = "1885";
-
-//        zycie.przywrocPamiatke(zapisaneStany[0]);
-
-//    }
-//}
-
