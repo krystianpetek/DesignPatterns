@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Memento;
 
-class Life
+public class Life
 {
     private string _time;
 

@@ -3,90 +3,68 @@ using System.Collections.Generic;
 
 namespace Memento.Two;
 
-internal class Program
+public static class Program
 {
+    public static void Main()
+    {
+        Document document = new Document();
+        DocumentHistory history = new DocumentHistory(document);
 
-    private static void Dokument(string text, Dokument dokument)
+        history.Snapshot();
+        document.Append("Lorem ipsum dolor sit amet");
+        history.Snapshot();
+        document.ItalicFont();
+        history.Snapshot();
+        document.BoldFont();
+        history.Snapshot();
+        Document("Stworzony dokument", document);
+        history.Restore(1);
+        Document("Przywrocony do 1 zapisu", document);
+        history.Restore(2);
+        Document("Przywrocony do 2 zapisu", document);
+    }
+
+    private static void Document(string text, Document dokument)
     {
         Console.WriteLine(text);
         Console.WriteLine(dokument);
     }
-    static void Main(string[] args)
-    {
-        var dokument = new Dokument();
-        var historia = new DokumentHistoria(dokument);
-
-        historia.SnapShot();
-        dokument.Dopisz("Lorem ipsum dolor sit amet");
-        historia.SnapShot();
-        dokument.PochylCzcionke();
-        historia.SnapShot();
-        dokument.PogrubCzcionke();
-        historia.SnapShot();
-        Dokument("Stworzony dokument", dokument);
-        historia.Restore(1);
-        Dokument("Przywrocony do 1 zapisu", dokument);
-        historia.Restore(2);
-        Dokument("Przywrocony do 2 zapisu", dokument);
-
-    }
 }
-public class Dokument
+public class Document
 {
-    private sealed class DokumentStan
+    private sealed class DocumentState
     {
-        private string _stan;
-        public DokumentStan(string stan)
+        public DocumentState(string state)
         {
-            _stan = stan;
+            State = state;
         }
-        public string Stan
-        {
-            get { return _stan; }
-        }
+
+        public string State { get; }
     }
+
     private string _html;
-    public void Dopisz(string text)
-    {
-        _html += text;
-    }
-    public void PochylCzcionke()
-    {
-        _html = "<i>" + _html + "</i>";
-    }
-    public void PogrubCzcionke()
-    {
-        _html = "<b>" + _html + "</b>";
-    }
-    public object ZapiszStan()
-    {
-        return new DokumentStan(_html);
-    }
-    public void LadujStan(object standoku)
-    {
-        _html = (standoku as DokumentStan).Stan;
-    }
-    public override string ToString()
-    {
-        return _html;
-    }
+    public void Append(string text) => _html += text;
+    public void ItalicFont() => _html = "<i>" + _html + "</i>";
+    public void BoldFont() => _html = "<b>" + _html + "</b>";
+    public object SaveState() => new DocumentState(_html);
+    public void RestoreState(object documentState) => _html = (documentState as DocumentState).State;
+    public override string ToString() => _html;
 }
-public class DokumentHistoria
+
+public class DocumentHistory
 {
-    private List<object> _historia = new List<object>();
-    private Dokument _dokument = null;
-    public DokumentHistoria(Dokument dokument)
+    private readonly List<object> _history = new List<object>();
+    private readonly Document _document;
+
+    public DocumentHistory(Document document) => _document = document;
+    public void Snapshot()
     {
-        _dokument = dokument;
-    }
-    public void SnapShot()
-    {
-        var memento = _dokument.ZapiszStan();
-        _historia.Add(memento);
+        object memento = _document.SaveState();
+        _history.Add(memento);
     }
     public void Restore(int index)
     {
-        var memento = _historia[index];
-        _dokument.LadujStan(memento);
+        object memento = _history[index];
+        _document.RestoreState(memento);
     }
 }
