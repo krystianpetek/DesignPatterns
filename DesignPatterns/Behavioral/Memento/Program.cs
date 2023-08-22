@@ -3,60 +3,58 @@ using System.Collections.Generic;
 
 namespace Memento;
 
-public class Life
+public class Caretaker
 {
-    private string _time;
+    private readonly Stack<Originator.Snapshot> _snapshots;
+    private readonly Originator _originator;
+    private string _currentTime;
+
+    public Caretaker()
+    {
+        _snapshots = new Stack<Originator.Snapshot>();
+        _originator = new Originator();
+    }
 
     public void SetTime(string time)
     {
-        Console.WriteLine($"Skok do roku: {time}");
-        _time = time;   
+        _currentTime = time;
+        _originator.SetTime(time);
+        _snapshots.Push(_originator.SaveMemento());
     }
 
-    public Memento SaveMemento()
+    public void Undo()
     {
-        Console.WriteLine("Saved memento");
-        return new Memento(_time);
-    }
+        if (_snapshots.Count == 0)
+        {
+            return;
+        }
 
-    public void RestoreMemento(Memento memento)
-    {
-        _time = memento.GetTime();
-        Console.Write($"Przywrócono rok: ");
-        Console.WriteLine(_time);
-    }
-
-    public class Memento
-    {
-        private readonly string _time;
-
-        public Memento(string time) => _time = time;
-        public string GetTime() => _time;
+        if (_snapshots.Peek().GetTime() == _currentTime)
+        {
+            _snapshots.Pop();
+            _originator.RestoreMemento(_snapshots.Pop());
+        }
+        else
+        {
+            _originator.RestoreMemento(_snapshots.Pop());
+        }
     }
 }
-
 
 public static class Program
 {
     public static void Main()
     {
-        Console.WriteLine("Powrot do przyszlosci (Back to the Future)");
-        Console.WriteLine();
+        Console.WriteLine("Back to the Future\n");
 
-        List<Life.Memento> savedMementos = new List<Life.Memento>();
-        Life life = new Life();
+        var caretaker = new Caretaker();
 
-        life.SetTime("1985");
-        savedMementos.Add(life.SaveMemento());
-        life.SetTime("1955");
-        savedMementos.Add(life.SaveMemento());
-        life.SetTime("2015");
-        savedMementos.Add(life.SaveMemento());
-        life.SetTime("1885");
-        savedMementos.Add(life.SaveMemento());
+        caretaker.SetTime("1985");
+        caretaker.SetTime("1955");
+        caretaker.SetTime("2015");
+        caretaker.SetTime("1885");
 
-        life.RestoreMemento(savedMementos[0]);
-        life.RestoreMemento(savedMementos[3]);
-
+        caretaker.Undo();
+        caretaker.Undo();
     }
 }
