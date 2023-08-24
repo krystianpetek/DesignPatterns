@@ -2,12 +2,12 @@
 
 namespace Observer.Two.Contracts;
 
-public abstract class FacebookGroups
+public abstract class FacebookGroup
 {
     private string _newPost;
     private readonly List<IUser> _users;
 
-    protected FacebookGroups()
+    protected FacebookGroup()
     {
         _newPost = string.Empty;
         _users = new List<IUser>();
@@ -22,13 +22,13 @@ public abstract class FacebookGroups
             Notification();
         }
     }
-    public void Subscribe(IUser osoba)
+    public void Subscribe(IUser user)
     {
-        _users.Add(osoba);
+        _users.Add(user);
     }
-    public void Unsubscribe(IUser osoba)
+    public void Unsubscribe(IUser user)
     {
-        _users.Remove(osoba);
+        _users.Remove(user);
     }
     public void Notification()
     {

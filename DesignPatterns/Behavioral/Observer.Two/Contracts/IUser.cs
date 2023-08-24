@@ -2,5 +2,5 @@
 
 public interface IUser
 {
-    public void NotifyUser(FacebookGroups group);
+    public void NotifyUser(FacebookGroup group);
 }

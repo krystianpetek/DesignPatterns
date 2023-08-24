@@ -11,7 +11,7 @@ public class User : IUser
         _name = name;
     }
 
-    public void NotifyUser(FacebookGroups group)
+    public void NotifyUser(FacebookGroup group)
     {
         Console.WriteLine($"{_name}: added new post: {group.Post}");
     }

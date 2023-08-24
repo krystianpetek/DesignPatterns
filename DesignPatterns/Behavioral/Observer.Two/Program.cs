@@ -8,7 +8,7 @@ public static class Program
 {
     static void Main(string[] args)
     {
-        FacebookGroups samochody = new CarGroup();
+        FacebookGroup samochody = new CarGroup();
         samochody.Subscribe(new User("Krystian"));
         samochody.Subscribe(new User("Gabriel"));
         samochody.Post = "New car in sale from Mercedes";

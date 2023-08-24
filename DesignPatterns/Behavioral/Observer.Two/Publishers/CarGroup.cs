@@ -2,4 +2,4 @@
 
 namespace Observer.Two.Publishers;
 
-public class CarGroup : FacebookGroups { }
+public class CarGroup : FacebookGroup { }
