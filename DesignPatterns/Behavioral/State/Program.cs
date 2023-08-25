@@ -1,127 +1,23 @@
-﻿using System;
+﻿using State.StateHolder;
+using State.States;
 
 namespace State;
 
-interface Stan
+public static class Program
 {
-    void alert();
-}
+    public static void Main()
+    {
+        Phone notifications = new Phone();
+        notifications.Notify();
 
-class Powiadomienia
-{
-    private Stan aktualnyStan;
-    public Powiadomienia()
-    {
-        aktualnyStan = new Wibracja();
-    }
-    public void ustawStan(Stan stan)
-    {
-        aktualnyStan = stan;
-    }
-    public void alert()
-    {
-        aktualnyStan.alert();
+        notifications.SetState(new SoundState());
+        notifications.Notify();
+        
+        notifications.SetState(new MuteState());
+        notifications.Notify();
+        notifications.Notify();
+        
+        notifications.SetState(new VibrationState());
+        notifications.Notify();
     }
 }
-
-class Dzwonek : Stan
-{
-    public void alert()
-    {
-        Console.WriteLine("dzwonek...");
-    }
-}
-class Wibracja : Stan
-{
-    public void alert()
-    {
-        Console.WriteLine("wibracja...");
-    }
-}
-class Wyciszenie : Stan
-{
-    public void alert()
-    {
-        Console.WriteLine("wyciszenie...");
-    }
-}
-
-
-
-class Program
-{
-    public static void Main(string[] args)
-    {
-        Powiadomienia powiadomienia = new Powiadomienia();
-        powiadomienia.alert();
-        powiadomienia.ustawStan(new Dzwonek());
-        powiadomienia.alert();
-        powiadomienia.ustawStan(new Wyciszenie());
-        powiadomienia.alert();
-        powiadomienia.alert();
-        powiadomienia.ustawStan(new Wibracja());
-        powiadomienia.alert();
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-//using System;
-
-//interface Stan
-//{
-
-//    void alert();
-
-//}
-
-//class Powiadomienia
-//{
-
-//    private Stan aktualnyStan;
-
-//    public Powiadomienia()
-//    {
-//        aktualnyStan = //domyślny
-//  }
-
-//    //ustawStan(Stan stan)
-//    //
-
-//    //
-//    //
-
-//}
-
-//class Dzwonek : Stan
-//{
-
-//    //
-
-//}
-
-
-
-//class Program
-//{
-//    public static void Main(string[] args)
-//    {
-//        //
-//        //
-//        //
-//        //
-//        //
-//        //
-//        powiadomienia.alert();
-//        powiadomienia.ustawStan(new Wibracja());
-//        powiadomienia.alert();
-//    }
-//}
