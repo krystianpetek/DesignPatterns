@@ -1,4 +1,6 @@
-﻿namespace State.Two.Contracts;
+﻿using State.Two.StateHolder;
+
+namespace State.Two.Contracts;
 
 public abstract class BaseState
 {

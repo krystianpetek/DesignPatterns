@@ -1,6 +1,7 @@
 ﻿using State.Two.Contracts;
+using State.Two.States;
 
-namespace State.Two;
+namespace State.Two.StateHolder;
 
 public class StateMachine
 {
