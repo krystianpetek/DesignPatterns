@@ -1,63 +1,19 @@
 ﻿using System;
+using Strategy.Two.Contracts;
+using Strategy.Two.Strategies;
 
 namespace Strategy.Two;
 
-internal class Program
+public static class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Operacja kalkulator = new Dodawanie();
-        var wynik = kalkulator.Operacja(1, 5);
-        kalkulator = new Modulo();
-        Console.WriteLine(wynik);
-        wynik = kalkulator.Operacja(4, 3);
-        Console.WriteLine(wynik);
-    }
-}
-public interface Operacja
-{
-    double Operacja(int a, int b);
-}
-public enum RodzajOperacji
-{
-    Dodawanie, Odejmowanie, Mnozenie, Dzielenie, Modulo
-}
-public class Dodawanie : Operacja
-{
-    public double Operacja(int a, int b)
-    {
-        return a + b;
-    }
-}
-public class Odejmowanie : Operacja
-{
-    public double Operacja(int a, int b)
+        IOperation operation = new Addition();
+        double result = operation.ExecuteOperation(1, 5);
+        operation = new Modulo();
+        Console.WriteLine(result);
 
-    {
-        return a - b;
-    }
-}
-public class Mnozenie : Operacja
-{
-    public double Operacja(int a, int b)
-
-    {
-        return a * b;
-    }
-}
-public class Dzielenie : Operacja
-{
-    public double Operacja(int a, int b)
-
-    {
-        return a / b;
-    }
-}
-public class Modulo : Operacja
-{
-    public double Operacja(int a, int b)
-
-    {
-        return a % b;
+        result = operation.ExecuteOperation(4, 3);
+        Console.WriteLine(result);
     }
 }
